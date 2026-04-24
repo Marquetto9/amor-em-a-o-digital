@@ -20,11 +20,10 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
-import mosaic1 from "@/assets/mosaic-1.jpg";
-import mosaic2 from "@/assets/mosaic-2.jpg";
-import mosaic3 from "@/assets/mosaic-3.jpg";
-import mosaic4 from "@/assets/mosaic-4.jpg";
-import mosaic5 from "@/assets/mosaic-5.jpg";
+import real1 from "@/assets/real-1.png";
+import real2 from "@/assets/real-2.png";
+import real3 from "@/assets/real-3.png";
+import real4 from "@/assets/real-4.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -145,18 +144,18 @@ const Index = () => {
       <section aria-label="Animais resgatados" className="border-b border-border bg-background">
         <div className="grid h-[260px] grid-cols-3 gap-1 sm:h-[360px] sm:gap-1.5 md:h-[460px] lg:h-[520px]">
           <div className="relative overflow-hidden">
-            <img src={mosaic1} alt="Cão resgatado em recuperação" loading="lazy" width={768} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+            <img src={real1} alt="Cão resgatado em recuperação no abrigo" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
           </div>
           <div className="grid grid-rows-2 gap-1 sm:gap-1.5">
             <div className="relative overflow-hidden">
-              <img src={mosaic2} alt="Cão filhote em atendimento veterinário" loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+              <img src={real2} alt="Cão recebendo atendimento veterinário" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
             </div>
             <div className="relative overflow-hidden">
-              <img src={mosaic5} alt="Cão sendo tratado por veterinário" loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+              <img src={real3} alt="Cão sob cuidados veterinários intensivos" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
             </div>
           </div>
           <div className="relative overflow-hidden">
-            <img src={mosaic3} alt="Gatinho resgatado nos braços do veterinário" loading="lazy" width={768} height={1024} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+            <img src={real4} alt="Cão resgatado em situação de fragilidade" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
           </div>
         </div>
