@@ -377,18 +377,18 @@ const Index = () => {
         />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {[
-            { img: gallery1, name: "Família feliz" },
-            { img: gallery2, name: "Filhotes acolhidos" },
-            { img: gallery3, name: "Tratamento veterinário" },
-            { img: gallery4, name: "Hora da refeição" },
+            { img: upFamilia, name: "Família feliz" },
+            { img: upFilhotes, name: "Filhotes acolhidos" },
+            { img: upVeterinario, name: "Tratamento veterinário" },
+            { img: upRefeicao, name: "Hora da refeição" },
             { img: dogRescue, name: "Resgate de rua" },
-            { img: catRescue, name: "Cuidado especial" },
-            { img: storyLuna, name: "Recuperação" },
+            { img: upCuidado, name: "Cuidado especial" },
+            { img: upRecuperacao, name: "Recuperação" },
             { img: shelterCare, name: "Carinho diário" },
           ].map((g, i) => (
             <figure key={i} className="group overflow-hidden rounded-2xl bg-card shadow-card ring-1 ring-border">
-              <div className="aspect-square overflow-hidden">
-                <img src={g.img} alt={g.name} loading="lazy" width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
+                <img src={g.img} alt={g.name} loading="lazy" className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
               </div>
               <figcaption className="p-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:p-3 sm:text-xs">{g.name}</figcaption>
             </figure>
