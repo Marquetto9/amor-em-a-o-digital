@@ -434,13 +434,13 @@ const Index = () => {
         />
         <div className="grid gap-8 md:gap-10">
           {[
-            { name: "Bento", img: storyBento, text: "Encontrado dentro de uma caixa de papelão na chuva, com apenas dois meses de vida e desnutrido. Bento foi resgatado, tratado e hoje espera por uma família que o ame para sempre." },
-            { name: "Luna", img: storyLuna, text: "Vítima de maus-tratos, Luna chegou ao abrigo arisca e desconfiada. Após meses de tratamento, vacinas e muito carinho, voltou a ronronar e confiar nas pessoas." },
-            { name: "Thor", img: storyThor, text: "Idoso e abandonado quando mais precisava de cuidados, Thor passou por cirurgia e tratamento prolongado. Hoje descansa em um lar temporário, com a dignidade que sempre mereceu." },
+            { name: "Bento", img: upBento, text: "Encontrado dentro de uma caixa de papelão na chuva, com apenas dois meses de vida e desnutrido. Bento foi resgatado, tratado e hoje espera por uma família que o ame para sempre." },
+            { name: "Luna", img: upLuna, text: "Vítima de maus-tratos, Luna chegou ao abrigo arisca e desconfiada. Após meses de tratamento, vacinas e muito carinho, voltou a confiar nas pessoas." },
+            { name: "Thor", img: upThor, text: "Idoso e abandonado quando mais precisava de cuidados, Thor passou por cirurgia e tratamento prolongado. Hoje descansa em um lar temporário, com a dignidade que sempre mereceu." },
           ].map((s, i) => (
             <article key={s.name} className={`grid items-center gap-6 md:grid-cols-2 md:gap-10 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
-              <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border">
-                <img src={s.img} alt={`História de ${s.name}`} loading="lazy" width={768} height={768} className="aspect-square w-full object-cover" />
+              <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border bg-muted flex items-center justify-center">
+                <img src={s.img} alt={`História de ${s.name}`} loading="lazy" className="aspect-[4/3] w-full object-contain" />
               </div>
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary">
