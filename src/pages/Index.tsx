@@ -24,6 +24,15 @@ import real1 from "@/assets/real-1.png";
 import real2 from "@/assets/real-2.png";
 import real3 from "@/assets/real-3.png";
 import real4 from "@/assets/real-4.png";
+import upBento from "@/assets/up-bento.png";
+import upLuna from "@/assets/up-luna.png";
+import upThor from "@/assets/up-thor.png";
+import upRecuperacao from "@/assets/up-recuperacao.png";
+import upCuidado from "@/assets/up-cuidado.png";
+import upVeterinario from "@/assets/up-veterinario.png";
+import upFamilia from "@/assets/up-familia.png";
+import upFilhotes from "@/assets/up-filhotes.png";
+import upRefeicao from "@/assets/up-refeicao.png";
 
 const CHECKOUT_URL = "#comprar";
 
