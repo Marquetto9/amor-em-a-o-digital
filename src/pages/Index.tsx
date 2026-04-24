@@ -24,6 +24,15 @@ import real1 from "@/assets/real-1.png";
 import real2 from "@/assets/real-2.png";
 import real3 from "@/assets/real-3.png";
 import real4 from "@/assets/real-4.png";
+import upBento from "@/assets/up-bento.png";
+import upLuna from "@/assets/up-luna.png";
+import upThor from "@/assets/up-thor.png";
+import upRecuperacao from "@/assets/up-recuperacao.png";
+import upCuidado from "@/assets/up-cuidado.png";
+import upVeterinario from "@/assets/up-veterinario.png";
+import upFamilia from "@/assets/up-familia.png";
+import upFilhotes from "@/assets/up-filhotes.png";
+import upRefeicao from "@/assets/up-refeicao.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -212,7 +221,7 @@ const Index = () => {
         <div className="container py-12 sm:py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Organizado por</p>
-            <p className="mt-1 font-display text-lg font-bold text-brown sm:text-xl">Refúgio das Patas — ONG de proteção animal</p>
+            <p className="mt-1 font-display text-lg font-bold text-brown sm:text-xl">Refúgio das Patas — iniciativa de proteção animal</p>
 
             <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-brown text-balance sm:text-5xl md:text-6xl">
               Cada e-book vendido é uma <span className="text-urgent">tigela cheia</span> e uma vida que continua.
@@ -368,18 +377,18 @@ const Index = () => {
         />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {[
-            { img: gallery1, name: "Família feliz" },
-            { img: gallery2, name: "Filhotes acolhidos" },
-            { img: gallery3, name: "Tratamento veterinário" },
-            { img: gallery4, name: "Hora da refeição" },
+            { img: upFamilia, name: "Família feliz" },
+            { img: upFilhotes, name: "Filhotes acolhidos" },
+            { img: upVeterinario, name: "Tratamento veterinário" },
+            { img: upRefeicao, name: "Hora da refeição" },
             { img: dogRescue, name: "Resgate de rua" },
-            { img: catRescue, name: "Cuidado especial" },
-            { img: storyLuna, name: "Recuperação" },
+            { img: upCuidado, name: "Cuidado especial" },
+            { img: upRecuperacao, name: "Recuperação" },
             { img: shelterCare, name: "Carinho diário" },
           ].map((g, i) => (
             <figure key={i} className="group overflow-hidden rounded-2xl bg-card shadow-card ring-1 ring-border">
-              <div className="aspect-square overflow-hidden">
-                <img src={g.img} alt={g.name} loading="lazy" width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
+                <img src={g.img} alt={g.name} loading="lazy" className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105" />
               </div>
               <figcaption className="p-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:p-3 sm:text-xs">{g.name}</figcaption>
             </figure>
@@ -425,13 +434,13 @@ const Index = () => {
         />
         <div className="grid gap-8 md:gap-10">
           {[
-            { name: "Bento", img: storyBento, text: "Encontrado dentro de uma caixa de papelão na chuva, com apenas dois meses de vida e desnutrido. Bento foi resgatado, tratado e hoje espera por uma família que o ame para sempre." },
-            { name: "Luna", img: storyLuna, text: "Vítima de maus-tratos, Luna chegou ao abrigo arisca e desconfiada. Após meses de tratamento, vacinas e muito carinho, voltou a ronronar e confiar nas pessoas." },
-            { name: "Thor", img: storyThor, text: "Idoso e abandonado quando mais precisava de cuidados, Thor passou por cirurgia e tratamento prolongado. Hoje descansa em um lar temporário, com a dignidade que sempre mereceu." },
+            { name: "Bento", img: upBento, text: "Encontrado dentro de uma caixa de papelão na chuva, com apenas dois meses de vida e desnutrido. Bento foi resgatado, tratado e hoje espera por uma família que o ame para sempre." },
+            { name: "Luna", img: upLuna, text: "Vítima de maus-tratos, Luna chegou ao abrigo arisca e desconfiada. Após meses de tratamento, vacinas e muito carinho, voltou a confiar nas pessoas." },
+            { name: "Thor", img: upThor, text: "Idoso e abandonado quando mais precisava de cuidados, Thor passou por cirurgia e tratamento prolongado. Hoje descansa em um lar temporário, com a dignidade que sempre mereceu." },
           ].map((s, i) => (
             <article key={s.name} className={`grid items-center gap-6 md:grid-cols-2 md:gap-10 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
-              <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border">
-                <img src={s.img} alt={`História de ${s.name}`} loading="lazy" width={768} height={768} className="aspect-square w-full object-cover" />
+              <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border bg-muted flex items-center justify-center">
+                <img src={s.img} alt={`História de ${s.name}`} loading="lazy" className="aspect-[4/3] w-full object-contain" />
               </div>
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary">
