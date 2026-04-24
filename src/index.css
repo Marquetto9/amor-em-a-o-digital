@@ -38,6 +38,9 @@ All colors MUST be HSL.
     --destructive: 0 70% 50%;
     --destructive-foreground: 38 33% 97%;
 
+    --urgent: 14 88% 52%;              /* laranja urgência */
+    --urgent-foreground: 38 33% 97%;
+
     --border: 36 30% 85%;
     --input: 36 30% 85%;
     --ring: 126 22% 49%;
