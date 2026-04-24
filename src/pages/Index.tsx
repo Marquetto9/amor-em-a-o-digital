@@ -221,7 +221,7 @@ const Index = () => {
         <div className="container py-12 sm:py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Organizado por</p>
-            <p className="mt-1 font-display text-lg font-bold text-brown sm:text-xl">Refúgio das Patas — ONG de proteção animal</p>
+            <p className="mt-1 font-display text-lg font-bold text-brown sm:text-xl">Refúgio das Patas — iniciativa de proteção animal</p>
 
             <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-brown text-balance sm:text-5xl md:text-6xl">
               Cada e-book vendido é uma <span className="text-urgent">tigela cheia</span> e uma vida que continua.
