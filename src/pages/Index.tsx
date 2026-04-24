@@ -40,6 +40,10 @@ import upGatoRua from "@/assets/up-gato-rua.png";
 import upCaoMagro from "@/assets/up-cao-magro.png";
 import upCaoFerido from "@/assets/up-cao-ferido.png";
 import upFilhoteMato from "@/assets/up-filhote-mato.png";
+import upSituacao from "@/assets/up-situacao.png";
+import upPrecisamos from "@/assets/up-precisamos.png";
+import upAntesDepois from "@/assets/up-antesdepois.png";
+import up4Filhotes from "@/assets/up-4filhotes.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -327,9 +331,9 @@ const Index = () => {
       <section className="container py-14 sm:py-20">
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { img: shelterCare, title: "A situação", text: "O abrigo está superlotado. Mais de 180 animais convivem em um espaço pensado para metade disso, com despesas mensais que ultrapassam o que arrecadamos." },
-            { img: dogRescue, title: "Por que precisamos de você", text: "Sem novas fontes de apoio, faltarão ração, vacinas e atendimento veterinário. Cada compra significa um dia a mais de cuidado garantido para um animal." },
-            { img: catRescue, title: "Como sua compra ajuda", text: "Os R$ 29,90 do e-book são revertidos integralmente para a manutenção do refúgio: alimentação, saúde, castração e resgates de emergência." },
+            { img: upSituacao, title: "A situação", text: "O abrigo está superlotado. Mais de 180 animais convivem em um espaço pensado para metade disso, com despesas mensais que ultrapassam o que arrecadamos." },
+            { img: upPrecisamos, title: "Por que precisamos de você", text: "Sem novas fontes de apoio, faltarão ração, vacinas e atendimento veterinário. Cada compra significa um dia a mais de cuidado garantido para um animal." },
+            { img: upAntesDepois, title: "Como sua compra ajuda", text: "Os R$ 29,90 do e-book são revertidos integralmente para a manutenção do refúgio: alimentação, saúde, castração e resgates de emergência." },
           ].map((b, i) => (
             <article key={i} className="overflow-hidden rounded-3xl bg-card shadow-card ring-1 ring-border transition hover:shadow-soft">
               <div className="aspect-[4/3] overflow-hidden">
@@ -468,8 +472,8 @@ const Index = () => {
       <section className="bg-gradient-to-b from-background to-secondary/30 py-14 sm:py-20">
         <div className="container">
           <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
-            <div className="overflow-hidden rounded-3xl shadow-soft">
-              <img src={shelterCare} alt="Refúgio das Patas em ação" loading="lazy" width={800} height={600} className="aspect-[4/3] w-full object-cover" />
+            <div className="overflow-hidden rounded-3xl shadow-soft bg-muted flex items-center justify-center">
+              <img src={up4Filhotes} alt="Filhotes acolhidos pelo Refúgio das Patas" loading="lazy" width={800} height={600} className="aspect-[4/3] w-full object-contain" />
             </div>
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary">
