@@ -20,6 +20,11 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
+import mosaic1 from "@/assets/mosaic-1.jpg";
+import mosaic2 from "@/assets/mosaic-2.jpg";
+import mosaic3 from "@/assets/mosaic-3.jpg";
+import mosaic4 from "@/assets/mosaic-4.jpg";
+import mosaic5 from "@/assets/mosaic-5.jpg";
 
 const CHECKOUT_URL = "#comprar";
 
