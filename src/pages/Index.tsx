@@ -141,6 +141,27 @@ const Index = () => {
         )}
       </header>
 
+      {/* ============ MOSAIC HERO (estilo PixDoBem) ============ */}
+      <section aria-label="Animais resgatados" className="border-b border-border bg-background">
+        <div className="grid h-[260px] grid-cols-3 gap-1 sm:h-[360px] sm:gap-1.5 md:h-[460px] lg:h-[520px]">
+          <div className="relative overflow-hidden">
+            <img src={mosaic1} alt="Cão resgatado em recuperação" loading="lazy" width={768} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+          </div>
+          <div className="grid grid-rows-2 gap-1 sm:gap-1.5">
+            <div className="relative overflow-hidden">
+              <img src={mosaic2} alt="Cão filhote em atendimento veterinário" loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+            </div>
+            <div className="relative overflow-hidden">
+              <img src={mosaic5} alt="Cão sendo tratado por veterinário" loading="lazy" width={1024} height={768} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+            </div>
+          </div>
+          <div className="relative overflow-hidden">
+            <img src={mosaic3} alt="Gatinho resgatado nos braços do veterinário" loading="lazy" width={768} height={1024} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
+          </div>
+        </div>
+      </section>
+
       {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
       <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
         <div className="container">
