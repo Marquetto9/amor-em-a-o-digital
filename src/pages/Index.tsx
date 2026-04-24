@@ -33,6 +33,13 @@ import upVeterinario from "@/assets/up-veterinario.png";
 import upFamilia from "@/assets/up-familia.png";
 import upFilhotes from "@/assets/up-filhotes.png";
 import upRefeicao from "@/assets/up-refeicao.png";
+import upRacaoGrupo from "@/assets/up-racao-grupo.png";
+import upFilhotes4 from "@/assets/up-filhotes-4.png";
+import upAbraco from "@/assets/up-abraco.png";
+import upGatoRua from "@/assets/up-gato-rua.png";
+import upCaoMagro from "@/assets/up-cao-magro.png";
+import upCaoFerido from "@/assets/up-cao-ferido.png";
+import upFilhoteMato from "@/assets/up-filhote-mato.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -377,14 +384,14 @@ const Index = () => {
         />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {[
-            { img: upFamilia, name: "Família feliz" },
-            { img: upFilhotes, name: "Filhotes acolhidos" },
-            { img: upVeterinario, name: "Tratamento veterinário" },
-            { img: upRefeicao, name: "Hora da refeição" },
-            { img: dogRescue, name: "Resgate de rua" },
-            { img: upCuidado, name: "Cuidado especial" },
-            { img: upRecuperacao, name: "Recuperação" },
-            { img: shelterCare, name: "Carinho diário" },
+            { img: upVeterinario, name: "Família feliz" },
+            { img: upFilhotes4, name: "Filhotes acolhidos" },
+            { img: upRefeicao, name: "Tratamento veterinário" },
+            { img: upFilhotes, name: "Hora da refeição" },
+            { img: upGatoRua, name: "Resgate de rua" },
+            { img: upCaoFerido, name: "Cuidado especial" },
+            { img: upCaoMagro, name: "Recuperação" },
+            { img: upAbraco, name: "Carinho diário" },
           ].map((g, i) => (
             <figure key={i} className="group overflow-hidden rounded-2xl bg-card shadow-card ring-1 ring-border">
               <div className="aspect-[4/5] overflow-hidden bg-muted flex items-center justify-center">
