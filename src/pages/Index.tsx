@@ -142,21 +142,23 @@ const Index = () => {
 
       {/* ============ MOSAIC HERO (estilo PixDoBem) ============ */}
       <section aria-label="Animais resgatados" className="border-b border-border bg-background">
-        <div className="grid h-[260px] grid-cols-3 gap-1 sm:h-[360px] sm:gap-1.5 md:h-[460px] lg:h-[520px]">
-          <div className="relative overflow-hidden">
-            <img src={real1} alt="Cão resgatado em recuperação no abrigo" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
-          </div>
-          <div className="grid grid-rows-2 gap-1 sm:gap-1.5">
-            <div className="relative overflow-hidden">
-              <img src={real2} alt="Cão recebendo atendimento veterinário" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
-            </div>
-            <div className="relative overflow-hidden">
-              <img src={real3} alt="Cão sob cuidados veterinários intensivos" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
-            </div>
-          </div>
-          <div className="relative overflow-hidden">
-            <img src={real4} alt="Cão resgatado em situação de fragilidade" loading="lazy" className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
+        <div className="container py-4 sm:py-6">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4">
+            {[
+              { src: real1, alt: "Cão resgatado em recuperação no abrigo" },
+              { src: real2, alt: "Cão recebendo atendimento veterinário" },
+              { src: real3, alt: "Cão sob cuidados veterinários intensivos" },
+              { src: real4, alt: "Cão resgatado em situação de fragilidade" },
+            ].map((img, i) => (
+              <div key={i} className="flex aspect-[3/4] items-center justify-center overflow-hidden rounded-2xl bg-muted shadow-card ring-1 ring-border">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
