@@ -8,35 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Refúgio das Patas — paleta acolhedora */
+    --background: 38 33% 95%;          /* off-white #F7F4EF */
+    --foreground: 30 6% 35%;           /* cinza quente #5F5A54 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 30 6% 35%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 30 6% 35%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 126 22% 49%;            /* verde médio #5E9A68 */
+    --primary-foreground: 38 33% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary-soft: 117 27% 60%;       /* verde suave #7FB37A */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: 36 56% 83%;           /* bege claro #E9D8BD */
+    --secondary-foreground: 26 27% 27%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 36 40% 90%;
+    --muted-foreground: 30 8% 42%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 35 49% 72%;              /* bege quente #D9BE95 */
+    --accent-foreground: 26 27% 27%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --brown: 26 27% 43%;               /* marrom suave #8A6B4F */
+    --brown-foreground: 38 33% 97%;
 
-    --radius: 0.5rem;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 38 33% 97%;
+
+    --border: 36 30% 85%;
+    --input: 36 30% 85%;
+    --ring: 126 22% 49%;
+
+    --radius: 1rem;
+
+    /* Gradientes & sombras */
+    --gradient-hero: linear-gradient(135deg, hsl(38 33% 96%) 0%, hsl(36 56% 90%) 60%, hsl(35 49% 82%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(117 27% 60%), hsl(126 22% 45%));
+    --gradient-warm: linear-gradient(135deg, hsl(36 56% 88%), hsl(35 49% 78%));
+    --shadow-soft: 0 10px 40px -12px hsl(126 22% 30% / 0.18);
+    --shadow-glow: 0 20px 60px -20px hsl(117 27% 50% / 0.35);
+    --shadow-card: 0 4px 20px -8px hsl(26 27% 30% / 0.12);
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +118,21 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero { background: var(--gradient-hero); }
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-warm { background: var(--gradient-warm); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-balance { text-wrap: balance; }
 }
