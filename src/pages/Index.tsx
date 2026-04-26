@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import logo from "@/assets/logo-refugio.png";
 import heroPets from "@/assets/hero-pets.jpg";
-import ebookMockup from "@/assets/ebook-mockup.png";
+import ebookMockup from "@/assets/ebook-capa.png";
 import dogRescue from "@/assets/dog-rescue.jpg";
 import catRescue from "@/assets/cat-rescue.jpg";
 import shelterCare from "@/assets/shelter-care.jpg";
@@ -51,7 +51,19 @@ import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
 import galMatilha from "@/assets/gal-matilha.png";
 
-const CHECKOUT_URL = "#comprar";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY";
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+const trackInitiateCheckout = () => {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("track", "InitiateCheckout");
+  }
+};
 
 /* ---------- Building blocks ---------- */
 const Cta = ({ children, className = "", size = "md" }: { children: React.ReactNode; className?: string; size?: "md" | "lg" | "xl" }) => {
@@ -63,6 +75,9 @@ const Cta = ({ children, className = "", size = "md" }: { children: React.ReactN
   return (
     <a
       href={CHECKOUT_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={trackInitiateCheckout}
       className={`group inline-flex w-full items-center justify-center gap-2 rounded-full bg-urgent font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto ${sizes[size]} ${className}`}
     >
       <Heart className="h-5 w-5" fill="currentColor" />
