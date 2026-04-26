@@ -49,6 +49,7 @@ import galComendo from "@/assets/gal-comendo.png";
 import galCorredor from "@/assets/gal-corredor.png";
 import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
+import galMatilha from "@/assets/gal-matilha.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -298,8 +299,8 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="galeria" className="mt-8">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
-              {[galAbracoGato, galCorredor, galVet, galGatos, galComendo].map((img, i) => (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
+              {[galAbracoGato, galCorredor, galVet, galGatos, galComendo, galMatilha].map((img, i) => (
                 <div key={i} className="aspect-square overflow-hidden rounded-2xl bg-muted shadow-card flex items-center justify-center">
                   <img src={img} alt={`Animal resgatado ${i + 1}`} loading="lazy" className="h-full w-full object-cover transition-transform hover:scale-105" />
                 </div>
