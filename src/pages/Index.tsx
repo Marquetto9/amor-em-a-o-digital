@@ -44,6 +44,11 @@ import upSituacao from "@/assets/up-situacao.png";
 import upPrecisamos from "@/assets/up-precisamos.png";
 import upAntesDepois from "@/assets/up-antesdepois.png";
 import up4Filhotes from "@/assets/up-4filhotes.png";
+import galAbracoGato from "@/assets/gal-abraco-gato.png";
+import galComendo from "@/assets/gal-comendo.png";
+import galCorredor from "@/assets/gal-corredor.png";
+import galVet from "@/assets/gal-vet.png";
+import galGatos from "@/assets/gal-gatos.png";
 
 const CHECKOUT_URL = "#comprar";
 
@@ -293,10 +298,10 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="galeria" className="mt-8">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-              {[gallery1, gallery2, gallery3, gallery4, dogRescue, catRescue, shelterCare, storyLuna].map((img, i) => (
-                <div key={i} className="aspect-square overflow-hidden rounded-2xl shadow-card">
-                  <img src={img} alt={`Animal resgatado ${i + 1}`} loading="lazy" width={400} height={400} className="h-full w-full object-cover transition-transform hover:scale-105" />
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+              {[galAbracoGato, galCorredor, galVet, galGatos, galComendo].map((img, i) => (
+                <div key={i} className="aspect-square overflow-hidden rounded-2xl bg-muted shadow-card flex items-center justify-center">
+                  <img src={img} alt={`Animal resgatado ${i + 1}`} loading="lazy" className="h-full w-full object-cover transition-transform hover:scale-105" />
                 </div>
               ))}
             </div>
