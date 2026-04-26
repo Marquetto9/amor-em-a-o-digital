@@ -119,6 +119,12 @@ const Index = () => {
   const ebooks = useCounter(892);
   const goal = 2500;
   const progress = Math.round((ebooks / goal) * 100);
+  const [showVslCta, setShowVslCta] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowVslCta(true), 50000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && typeof window.fbq === "function") {
@@ -241,21 +247,28 @@ const Index = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-8 flex justify-center sm:mt-10">
-            <a
-              href="#topo"
-              onClick={trackInitiateCheckout}
-              className="group inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-urgent px-8 py-4 text-base font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
-            >
-              <Heart className="h-5 w-5" fill="currentColor" />
-              Quero ajudar comprando
-            </a>
+          <div
+            className={`mt-8 flex justify-center transition-all duration-700 ease-out sm:mt-10 ${
+              showVslCta ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-4"
+            }`}
+            aria-hidden={!showVslCta}
+          >
+            {showVslCta && (
+              <a
+                href="#produto-solidario"
+                className="group inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-urgent px-8 py-4 text-base font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
+              >
+                <Heart className="h-5 w-5" fill="currentColor" />
+                Quero ajudar comprando
+              </a>
+            )}
           </div>
         </div>
       </section>
 
       {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
       <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
+        <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
         <div className="container">
           <div className="mx-auto max-w-5xl rounded-3xl bg-card p-5 shadow-soft ring-1 ring-border sm:p-8">
             <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
