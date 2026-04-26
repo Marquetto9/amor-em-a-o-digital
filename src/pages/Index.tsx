@@ -220,7 +220,7 @@ const Index = () => {
             <span className="inline-flex items-center gap-2 rounded-full bg-urgent/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white ring-1 ring-urgent/40">
               <Heart className="h-3 w-3" fill="currentColor" /> Campanha solidária
             </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl">
+            <h2 className="mt-4 font-display text-2xl font-extrabold leading-tight text-balance text-white drop-shadow-lg sm:text-3xl md:text-4xl">
               SOMOS UM ABRIGO <span className="text-urgent">INDEPENDENTE</span> CUIDANDO DE MAIS DE <span className="text-urgent">100 VIDAS</span>
             </h2>
             <p className="mt-3 text-sm font-medium text-white/90 sm:text-base md:text-lg">
