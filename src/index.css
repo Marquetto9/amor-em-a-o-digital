@@ -41,6 +41,8 @@ All colors MUST be HSL.
     --urgent: 142 71% 45%;             /* verde CTA #22C55E */
     --urgent-foreground: 0 0% 100%;    /* branco */
 
+    --highlight: 14 88% 52%;           /* laranja/vermelho destaque original */
+
     --border: 36 30% 85%;
     --input: 36 30% 85%;
     --ring: 126 22% 49%;
