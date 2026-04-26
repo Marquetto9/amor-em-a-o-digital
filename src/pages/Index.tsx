@@ -123,6 +123,19 @@ const Index = () => {
   const goal = 2500;
   const progress = Math.round((ebooks / goal) * 100);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", {
+        content_name: "E-book Guia do Cuidado e Amor Animal",
+        content_category: "ebook",
+        content_ids: ["ebook-refugio-das-patas"],
+        content_type: "product",
+        value: 29.9,
+        currency: "BRL",
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       {/* ============ TOP STRIP ============ */}
