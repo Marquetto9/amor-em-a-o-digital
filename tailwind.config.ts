@@ -36,6 +36,9 @@ export default {
           DEFAULT: "hsl(var(--urgent))",
           foreground: "hsl(var(--urgent-foreground))",
         },
+        highlight: {
+          DEFAULT: "hsl(var(--highlight))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
