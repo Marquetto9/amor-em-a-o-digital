@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import logo from "@/assets/logo-refugio.png";
 import heroPets from "@/assets/hero-pets.jpg";
-import ebookMockup from "@/assets/ebook-mockup.png";
+import ebookMockup from "@/assets/ebook-capa.png";
 import dogRescue from "@/assets/dog-rescue.jpg";
 import catRescue from "@/assets/cat-rescue.jpg";
 import shelterCare from "@/assets/shelter-care.jpg";
@@ -51,7 +51,19 @@ import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
 import galMatilha from "@/assets/gal-matilha.png";
 
-const CHECKOUT_URL = "#comprar";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY";
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+const trackInitiateCheckout = () => {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+    window.fbq("track", "InitiateCheckout");
+  }
+};
 
 /* ---------- Building blocks ---------- */
 const Cta = ({ children, className = "", size = "md" }: { children: React.ReactNode; className?: string; size?: "md" | "lg" | "xl" }) => {
@@ -63,6 +75,9 @@ const Cta = ({ children, className = "", size = "md" }: { children: React.ReactN
   return (
     <a
       href={CHECKOUT_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={trackInitiateCheckout}
       className={`group inline-flex w-full items-center justify-center gap-2 rounded-full bg-urgent font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto ${sizes[size]} ${className}`}
     >
       <Heart className="h-5 w-5" fill="currentColor" />
@@ -108,6 +123,19 @@ const Index = () => {
   const goal = 2500;
   const progress = Math.round((ebooks / goal) * 100);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", {
+        content_name: "E-book Guia do Cuidado e Amor Animal",
+        content_category: "ebook",
+        content_ids: ["ebook-refugio-das-patas"],
+        content_type: "product",
+        value: 29.9,
+        currency: "BRL",
+      });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       {/* ============ TOP STRIP ============ */}
@@ -138,6 +166,9 @@ const Index = () => {
 
           <a
             href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackInitiateCheckout}
             className="hidden rounded-full bg-urgent px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-urgent-foreground shadow-soft transition hover:bg-urgent/90 md:inline-flex"
           >
             Quero ajudar comprando
@@ -158,7 +189,7 @@ const Index = () => {
               <a href="#ebook" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Sobre o e-book</a>
               <a href="#causa" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">A causa</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Contato</a>
-              <a href={CHECKOUT_URL} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={() => { setMenuOpen(false); trackInitiateCheckout(); }} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
                 Quero ajudar comprando
               </a>
             </nav>
@@ -465,7 +496,7 @@ const Index = () => {
                 </span>
                 <h3 className="mt-3 font-display text-2xl font-bold text-brown sm:text-3xl">{s.name}</h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">{s.text}</p>
-                <a href={CHECKOUT_URL} className="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-urgent hover:underline">
+                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackInitiateCheckout} className="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-urgent hover:underline">
                   Ajude o próximo a ser resgatado <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
