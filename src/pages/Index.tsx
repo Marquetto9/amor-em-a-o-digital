@@ -153,6 +153,9 @@ const Index = () => {
 
           <a
             href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackInitiateCheckout}
             className="hidden rounded-full bg-urgent px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-urgent-foreground shadow-soft transition hover:bg-urgent/90 md:inline-flex"
           >
             Quero ajudar comprando
@@ -173,7 +176,7 @@ const Index = () => {
               <a href="#ebook" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Sobre o e-book</a>
               <a href="#causa" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">A causa</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Contato</a>
-              <a href={CHECKOUT_URL} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={() => { setMenuOpen(false); trackInitiateCheckout(); }} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
                 Quero ajudar comprando
               </a>
             </nav>
@@ -480,7 +483,7 @@ const Index = () => {
                 </span>
                 <h3 className="mt-3 font-display text-2xl font-bold text-brown sm:text-3xl">{s.name}</h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">{s.text}</p>
-                <a href={CHECKOUT_URL} className="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-urgent hover:underline">
+                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={trackInitiateCheckout} className="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-urgent hover:underline">
                   Ajude o próximo a ser resgatado <ChevronRight className="h-4 w-4" />
                 </a>
               </div>
