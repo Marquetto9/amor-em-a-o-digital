@@ -20,10 +20,7 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
-import real1 from "@/assets/real-1.png";
-import real2 from "@/assets/real-2.png";
-import real3 from "@/assets/real-3.png";
-import real4 from "@/assets/real-4.png";
+import vslBg from "@/assets/vsl-bg.png";
 import upBento from "@/assets/up-bento.png";
 import upLuna from "@/assets/up-luna.png";
 import upThor from "@/assets/up-thor.png";
@@ -197,25 +194,62 @@ const Index = () => {
         )}
       </header>
 
-      {/* ============ MOSAIC HERO (estilo PixDoBem) ============ */}
-      <section aria-label="Animais resgatados" className="border-b border-border bg-background">
-        <div className="container py-4 sm:py-6">
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4">
-            {[
-              { src: real1, alt: "Cão resgatado em recuperação no abrigo" },
-              { src: real2, alt: "Cão recebendo atendimento veterinário" },
-              { src: real3, alt: "Cão sob cuidados veterinários intensivos" },
-              { src: real4, alt: "Cão resgatado em situação de fragilidade" },
-            ].map((img, i) => (
-              <div key={i} className="flex aspect-[3/4] items-center justify-center overflow-hidden rounded-2xl bg-muted shadow-card ring-1 ring-border">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            ))}
+      {/* ============ VSL HERO ============ */}
+      <section
+        aria-label="Vídeo da campanha"
+        className="relative border-b border-border bg-brown"
+        style={{
+          backgroundImage: `url(${vslBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {/* Overlay escuro para legibilidade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brown/80 via-brown/60 to-brown/85" aria-hidden="true" />
+
+        <div className="container relative z-10 py-10 sm:py-16 md:py-20">
+          {/* Chamada */}
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-urgent/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white ring-1 ring-urgent/40">
+              <Heart className="h-3 w-3" fill="currentColor" /> Campanha solidária
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-white drop-shadow-lg sm:text-4xl md:text-5xl">
+              SOMOS UM ABRIGO <span className="text-urgent">INDEPENDENTE</span> CUIDANDO DE MAIS DE <span className="text-urgent">100 VIDAS</span>
+            </h2>
+            <p className="mt-3 text-sm font-medium text-white/90 sm:text-base md:text-lg">
+              Cada compra ajuda a manter nossos animais alimentados, protegidos e cuidados.
+            </p>
+          </div>
+
+          {/* Vídeo VSL */}
+          <div className="mx-auto mt-8 w-full max-w-[680px] sm:mt-10">
+            <div
+              className="relative overflow-hidden rounded-2xl border-2 border-urgent bg-black shadow-2xl"
+              style={{ aspectRatio: "4 / 3" }}
+            >
+              <iframe
+                src="https://player.vimeo.com/video/1186664326?title=0&byline=0&portrait=0"
+                title="VSL Refúgio das Patas"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 h-full w-full"
+                frameBorder={0}
+              />
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-8 flex justify-center sm:mt-10">
+            <a
+              href="#topo"
+              onClick={trackInitiateCheckout}
+              className="group inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-urgent px-8 py-4 text-base font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
+            >
+              <Heart className="h-5 w-5" fill="currentColor" />
+              Quero ajudar comprando
+            </a>
           </div>
         </div>
       </section>
