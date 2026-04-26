@@ -221,7 +221,7 @@ const Index = () => {
               <Heart className="h-3 w-3" fill="currentColor" /> Campanha solidária
             </span>
             <h2 className="mt-4 font-display text-2xl font-extrabold leading-tight text-balance text-white drop-shadow-lg sm:text-3xl md:text-4xl">
-              SOMOS UM ABRIGO <span className="text-urgent">INDEPENDENTE</span> CUIDANDO DE MAIS DE <span className="text-urgent">100 VIDAS</span>
+              SOMOS UM ABRIGO <span className="text-highlight">INDEPENDENTE</span> CUIDANDO DE MAIS DE <span className="text-highlight">100 VIDAS</span>
             </h2>
             <p className="mt-3 text-sm font-medium text-white/90 sm:text-base md:text-lg">
               Cada compra ajuda a manter nossos animais alimentados, protegidos e cuidados.
