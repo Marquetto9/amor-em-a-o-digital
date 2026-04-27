@@ -164,6 +164,32 @@ const Index = () => {
     }
   }, []);
 
+  // Fallback global: dispara InitiateCheckout para QUALQUER clique em link
+  // que aponte para o checkout da Kiwify (pay.kiwify.com.br/eqAb4HY),
+  // garantindo a captura mesmo se algum CTA for adicionado sem o handler.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.__utmifyCheckoutListener) return;
+    window.__utmifyCheckoutListener = true;
+
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const anchor = target.closest("a") as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || "";
+      if (href.includes("pay.kiwify.com.br/eqAb4HY")) {
+        trackInitiateCheckout();
+      }
+    };
+
+    document.addEventListener("click", handler, true);
+    return () => {
+      document.removeEventListener("click", handler, true);
+      window.__utmifyCheckoutListener = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       {/* ============ TOP STRIP ============ */}
