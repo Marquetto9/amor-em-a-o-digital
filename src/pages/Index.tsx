@@ -48,7 +48,7 @@ import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
 import galMatilha from "@/assets/gal-matilha.png";
 
-const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY";
+const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY?utm_source=facebook&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}";
 
 declare global {
   interface Window {
