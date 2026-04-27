@@ -53,12 +53,37 @@ const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY?utm_source=facebook&utm_
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    utmify?: (...args: unknown[]) => void;
+    utmifyPixel?: { track?: (...args: unknown[]) => void };
+    pixelId?: string;
+    dataLayer?: unknown[];
+    __utmifyCheckoutListener?: boolean;
   }
 }
 
 const trackInitiateCheckout = () => {
-  if (typeof window !== "undefined" && typeof window.fbq === "function") {
+  if (typeof window === "undefined") return;
+
+  // Meta Pixel
+  if (typeof window.fbq === "function") {
     window.fbq("track", "InitiateCheckout");
+  }
+
+  // UTMify Pixel — dispara em todas as APIs conhecidas para garantir captura
+  try {
+    if (typeof window.utmify === "function") {
+      window.utmify("track", "InitiateCheckout");
+    }
+    if (window.utmifyPixel && typeof window.utmifyPixel.track === "function") {
+      window.utmifyPixel.track("InitiateCheckout");
+    }
+    // dataLayer (caso UTMify escute via GTM)
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "InitiateCheckout" });
+    // Evento DOM customizado
+    window.dispatchEvent(new CustomEvent("InitiateCheckout"));
+  } catch {
+    /* noop */
   }
 };
 
@@ -137,6 +162,32 @@ const Index = () => {
         currency: "BRL",
       });
     }
+  }, []);
+
+  // Fallback global: dispara InitiateCheckout para QUALQUER clique em link
+  // que aponte para o checkout da Kiwify (pay.kiwify.com.br/eqAb4HY),
+  // garantindo a captura mesmo se algum CTA for adicionado sem o handler.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.__utmifyCheckoutListener) return;
+    window.__utmifyCheckoutListener = true;
+
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const anchor = target.closest("a") as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || "";
+      if (href.includes("pay.kiwify.com.br/eqAb4HY")) {
+        trackInitiateCheckout();
+      }
+    };
+
+    document.addEventListener("click", handler, true);
+    return () => {
+      document.removeEventListener("click", handler, true);
+      window.__utmifyCheckoutListener = false;
+    };
   }, []);
 
   return (
