@@ -22,6 +22,7 @@ import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import vslBg from "@/assets/vsl-bg.png";
 import upBento from "@/assets/up-bento.png";
+import marianaFundadora from "@/assets/mariana-fundadora.jpg";
 import upLuna from "@/assets/up-luna.png";
 import upThor from "@/assets/up-thor.png";
 import upRecuperacao from "@/assets/up-recuperacao.png";
@@ -327,10 +328,9 @@ const Index = () => {
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-urgent/20 via-urgent/5 to-transparent blur-2xl" aria-hidden="true" />
                 <div className="relative overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-border">
                   <div className="relative w-full" style={{ paddingTop: "125%" }}>
-                    {/* TODO: Substituir o src abaixo pela foto da fundadora quando enviada */}
                     <img
-                      src="/placeholder.svg"
-                      alt="Fundadora do Refúgio das Patas"
+                      src={marianaFundadora}
+                      alt="Mariana, fundadora do Refúgio das Patas, segurando três filhotes resgatados"
                       loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover"
                     />
@@ -356,28 +356,40 @@ const Index = () => {
                 </p>
                 <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
                   <p>
-                    Meu nome é <strong className="text-foreground">Mariana</strong>, e há menos de um ano
-                    decidi transformar uma dor em propósito. Tudo começou quando encontrei a
-                    <strong className="text-foreground"> Pequena</strong>, uma cadelinha quase sem forças,
-                    abandonada na beira de uma estrada em Minas Gerais. Naquela noite, prometi a ela
-                    que nenhuma outra patinha precisaria passar por aquilo sozinha.
+                    <strong className="text-foreground">Mariana</strong>, de 29 anos, é formada em Letras.
+                    Apesar da formação, sua verdadeira paixão sempre foi cuidar dos animais.
+                  </p>
+                  <p>
+                    Há pouco menos de um ano, em uma cidade no interior de
+                    <strong className="text-foreground"> Minas Gerais</strong>, ela decidiu transformar
+                    essa paixão em propósito.
+                  </p>
+                  <p>
+                    Tudo começou quando encontrou
+                    <strong className="text-foreground"> três filhotes abandonados dentro de uma caixa de papelão</strong>,
+                    à beira de uma estrada. Naquela noite, prometeu que nenhuma outra patinha precisaria
+                    passar por aquilo sozinha.
                   </p>
                   <p>
                     Foi assim que nasceu o <strong className="text-urgent">Refúgio das Patas</strong> —
-                    um abrigo independente, pequeno em estrutura, mas
-                    <strong className="text-foreground"> imenso em amor</strong>. Em pouquíssimo tempo,
-                    já resgatamos <strong className="text-foreground">dezenas de vidas</strong>,
-                    cada uma com sua história de sofrimento transformada em esperança.
+                    um abrigo independente, <strong className="text-foreground">pequeno em estrutura, mas imenso em amor</strong>.
                   </p>
                   <p>
-                    Não temos patrocínio, nem grandes recursos. Faltam ração, remédios, espaço e descanso.
-                    O que não falta é <strong className="text-foreground">dedicação, fé e a luta diária</strong>
-                    para que cada animal acolhido tenha um lar, um prato de comida e alguém que o ame
-                    de verdade.
+                    Mesmo com poucos recursos, Mariana já ajudou a salvar
+                    <strong className="text-foreground"> diversas vidas</strong>, dedicando seus dias a
+                    cuidar de animais que antes não tinham nenhuma chance.
+                  </p>
+                  <p>
+                    Não há patrocínio, nem grandes apoios. Faltam ração, remédios, espaço… e até descanso.
+                  </p>
+                  <p>
+                    Mas o que nunca faltou foi
+                    <strong className="text-foreground"> dedicação, fé e a luta diária</strong> para que
+                    cada animal acolhido tenha um lar, um prato de comida e alguém que o ame de verdade.
                   </p>
                   <p className="text-foreground">
-                    Quando você apoia o Refúgio das Patas, você se torna parte dessa história — e de
-                    cada vida que ainda vamos salvar. 💛
+                    Hoje, o abrigo segue de pé graças à força dela… e à ajuda de pessoas que, assim como
+                    você, se importam. 💛
                   </p>
                 </div>
               </div>
