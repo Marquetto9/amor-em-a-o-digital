@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {
   Heart, ShieldCheck, Sparkles, PawPrint, Stethoscope, Utensils, Home, Syringe,
   CheckCircle2, BookOpen, Clock, Users, AlertTriangle, Share2, Mail, Instagram,
-  Phone, MapPin, Lock, Download, Star, ChevronRight, Menu, X
+  Phone, MapPin, Lock, Download, Star, ChevronRight, ChevronLeft, Menu, X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
