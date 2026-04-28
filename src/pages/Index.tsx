@@ -617,47 +617,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
-      <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
-        <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
-        <div className="container">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-card p-5 shadow-soft ring-1 ring-border sm:p-8">
-            <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-              <div className="text-center md:text-left">
-                <span className="inline-flex items-center gap-2 rounded-full bg-urgent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-urgent">
-                  <Sparkles className="h-3 w-3" /> Produto solidário
-                </span>
-                <h1 className="mt-3 font-display text-2xl font-bold leading-tight text-brown sm:text-3xl md:text-4xl">
-                  Ajude comprando o e-book solidário
-                </h1>
-                <p className="mt-2 text-sm text-muted-foreground sm:text-base">
-                  Adquira o e-book por <strong className="text-brown">R$ 29,90</strong> e ajude o Refúgio das Patas a continuar salvando vidas.
-                </p>
-
-                <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:items-center md:items-start md:justify-start">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-xs text-muted-foreground line-through">R$ 49,90</span>
-                    <span className="font-display text-4xl font-extrabold text-urgent sm:text-5xl">R$ 29,90</span>
-                  </div>
-                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">à vista no Pix ou cartão</span>
-                </div>
-
-                <Cta size="lg" className="mt-5">Comprar agora</Cta>
-                <p className="mt-3 flex items-center justify-center gap-3 text-[11px] text-muted-foreground md:justify-start">
-                  <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3" /> compra segura</span>
-                  <span className="inline-flex items-center gap-1"><Download className="h-3 w-3" /> entrega imediata</span>
-                </p>
-              </div>
-
-              <div className="relative mx-auto w-44 sm:w-56 md:w-64">
-                <div className="absolute -inset-4 rounded-full bg-primary-soft/30 blur-2xl" />
-                <img src={ebookMockup} alt="E-book Refúgio das Patas" className="relative animate-float drop-shadow-2xl" width={400} height={520} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 2. HERO ============ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
