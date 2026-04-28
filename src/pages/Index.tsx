@@ -319,6 +319,7 @@ const Index = () => {
 
       {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
       <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
+        {/* placeholder anchor moved below; original kept intact */}
         <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
         <div className="container">
           <div className="mx-auto max-w-5xl rounded-3xl bg-card p-5 shadow-soft ring-1 ring-border sm:p-8">
