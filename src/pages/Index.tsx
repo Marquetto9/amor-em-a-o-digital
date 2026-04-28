@@ -442,7 +442,6 @@ const Index = () => {
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
-                playsInline
                 className="absolute inset-0 h-full w-full"
                 frameBorder={0}
               />
