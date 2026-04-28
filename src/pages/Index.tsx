@@ -620,55 +620,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 2. HERO ============ */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img src={heroPets} alt="" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
-        </div>
-        <div className="container py-12 sm:py-16 md:py-24">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Organizado por</p>
-            <p className="mt-1 font-display text-lg font-bold text-brown sm:text-xl">Refúgio das Patas — iniciativa de proteção animal</p>
-
-            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] text-brown text-balance sm:text-5xl md:text-6xl">
-              Cada e-book vendido é uma <span className="text-urgent">tigela cheia</span> e uma vida que continua.
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-              Mais de 180 cães e gatos resgatados dependem do nosso abrigo. Por apenas R$ 29,90 você recebe um e-book útil e mantém viva a missão de quem não pode pedir ajuda.
-            </p>
-
-            {/* meta + counters */}
-            <div className="mx-auto mt-8 max-w-2xl rounded-2xl bg-card p-5 shadow-card ring-1 ring-border sm:p-6">
-              <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground sm:text-sm">
-                <span>Meta da campanha: {goal} e-books</span>
-                <span className="text-primary">{progress}%</span>
-              </div>
-              <div className="mt-2 h-3 overflow-hidden rounded-full bg-muted">
-                <div className="h-full rounded-full bg-gradient-to-r from-primary-soft to-primary transition-all" style={{ width: `${progress}%` }} />
-              </div>
-              <div className="mt-5 grid grid-cols-2 gap-3 text-center">
-                <div className="rounded-xl bg-secondary/40 p-3">
-                  <p className="font-display text-2xl font-bold text-brown sm:text-3xl">{supporters.toLocaleString("pt-BR")}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-muted-foreground sm:text-xs">pessoas apoiando</p>
-                </div>
-                <div className="rounded-xl bg-secondary/40 p-3">
-                  <p className="font-display text-2xl font-bold text-brown sm:text-3xl">{ebooks.toLocaleString("pt-BR")}</p>
-                  <p className="text-[11px] uppercase tracking-wider text-muted-foreground sm:text-xs">e-books vendidos</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Cta size="xl">Quero meu e-book</Cta>
-              <a href="#causa" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                Conhecer a causa <ChevronRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 3. ABAS ============ */}
       <section className="container py-10 sm:py-14">
         <Tabs defaultValue="campanha" className="mx-auto max-w-5xl">
