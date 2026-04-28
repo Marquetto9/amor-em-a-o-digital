@@ -485,6 +485,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ============ ADOTADOS NO REFÚGIO ============ */}
+      <section id="adotados" aria-label="Adotados no Refúgio das Patas" className="bg-gradient-to-b from-background via-secondary/30 to-background py-14 sm:py-20">
+        <div className="container">
+          <div className="relative mx-auto max-w-5xl">
+            {/* Detalhe decorativo: filhote espiando por cima do card */}
+            <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
+              <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-card bg-card shadow-soft ring-2 ring-primary/40 sm:h-28 sm:w-28">
+                <img
+                  src={upFilhotes}
+                  alt="Filhote espiando"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="relative rounded-[2rem] bg-card px-5 pb-10 pt-20 shadow-soft ring-1 ring-border sm:px-10 sm:pb-12 sm:pt-24">
+              <div className="mx-auto max-w-2xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary">
+                  <PawPrint className="h-3.5 w-3.5" /> Histórias felizes
+                </span>
+                <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-brown sm:text-4xl md:text-5xl">
+                  ADOTADOS NO <span className="text-primary">REFÚGIO</span>
+                </h2>
+                <p className="mt-3 text-base text-muted-foreground sm:text-lg">
+                  Veja as fotos de alguns dos nossos peludos que encontraram lares cheios de amor.
+                </p>
+              </div>
+
+              <div className="mt-10">
+                <AdotadosCarousel
+                  images={[
+                    { src: storyBento, alt: "Bento, adotado pelo Refúgio das Patas" },
+                    { src: storyLuna, alt: "Luna, adotada pelo Refúgio das Patas" },
+                    { src: storyThor, alt: "Thor, adotado pelo Refúgio das Patas" },
+                    { src: gallery1, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery2, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery3, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery4, alt: "Adotado do Refúgio das Patas" },
+                  ]}
+                />
+              </div>
+
+              <div className="mt-10 flex flex-col items-center gap-3">
+                <Cta size="lg">Quero ajudar</Cta>
+                <p className="text-sm text-muted-foreground">
+                  Juntos, podemos fazer a diferença! 🐾✨
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
       <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
         <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
