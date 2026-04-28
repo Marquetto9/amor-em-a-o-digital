@@ -986,28 +986,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 15. CTA FINAL ============ */}
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 -z-10">
-          <img src={heroPets} alt="" className="h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/95 to-background" />
-        </div>
-        <div className="container text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-urgent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-urgent">
-            Última chamada
-          </span>
-          <h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl font-extrabold leading-tight text-brown text-balance sm:text-5xl">
-            Seu gesto pode transformar a vida de um animal resgatado hoje.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Por apenas R$ 29,90, você leva um e-book útil pra casa e mantém viva a missão do Refúgio das Patas.
-          </p>
-          <div className="mt-8">
-            <Cta size="xl">Ajudar com R$ 29,90</Cta>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 16. FOOTER ============ */}
       <footer id="contato" className="border-t border-border bg-brown text-brown-foreground">
         <div className="container py-12">
