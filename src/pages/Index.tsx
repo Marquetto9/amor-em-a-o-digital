@@ -363,8 +363,8 @@ const Index = () => {
 
           <nav className="hidden items-center gap-7 text-sm font-medium text-foreground lg:flex">
             <a href="#como-ajudar" className="hover:text-primary">Como ajudar</a>
-            <a href="#ebook" className="hover:text-primary">Sobre o e-book</a>
             <a href="#causa" className="hover:text-primary">A causa</a>
+            <a href="#comprar" className="hover:text-primary">Apoiar</a>
             <a href="#contato" className="hover:text-primary">Contato</a>
           </nav>
 
@@ -390,8 +390,8 @@ const Index = () => {
           <div className="border-t border-border bg-background lg:hidden">
             <nav className="container flex flex-col gap-1 py-4 text-sm font-medium">
               <a href="#como-ajudar" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Como ajudar</a>
-              <a href="#ebook" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Sobre o e-book</a>
               <a href="#causa" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">A causa</a>
+              <a href="#comprar" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Apoiar</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Contato</a>
               <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={() => { setMenuOpen(false); trackInitiateCheckout(); }} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
                 Quero ajudar comprando
