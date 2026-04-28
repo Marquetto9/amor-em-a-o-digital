@@ -28,6 +28,10 @@ import upThor from "@/assets/up-thor.png";
 import upRecuperacao from "@/assets/up-recuperacao.png";
 import upCuidado from "@/assets/up-cuidado.png";
 import upVeterinario from "@/assets/up-veterinario.png";
+import adotadaLexie from "@/assets/adotados/lexie.jpg";
+import adotadoScott from "@/assets/adotados/scott.jpg";
+import adotadaMaya from "@/assets/adotados/maya.jpg";
+import adotadaGrazi from "@/assets/adotados/grazi.jpg";
 import upFamilia from "@/assets/up-familia.png";
 import upFilhotes from "@/assets/up-filhotes.png";
 import upRefeicao from "@/assets/up-refeicao.png";
@@ -533,13 +537,10 @@ const Index = () => {
               <div className="mt-10">
                 <AdotadosCarousel
                   images={[
-                    { src: storyBento, alt: "Bento, adotado pelo Refúgio das Patas" },
-                    { src: storyLuna, alt: "Luna, adotada pelo Refúgio das Patas" },
-                    { src: storyThor, alt: "Thor, adotado pelo Refúgio das Patas" },
-                    { src: gallery1, alt: "Adotado do Refúgio das Patas" },
-                    { src: gallery2, alt: "Adotado do Refúgio das Patas" },
-                    { src: gallery3, alt: "Adotado do Refúgio das Patas" },
-                    { src: gallery4, alt: "Adotado do Refúgio das Patas" },
+                    { src: adotadaLexie, alt: "Lexie, adotada e amada por sua nova família" },
+                    { src: adotadoScott, alt: "Scott aproveitando um dia na praia com sua família" },
+                    { src: adotadaMaya, alt: "Maya, adaptada e feliz no novo lar" },
+                    { src: adotadaGrazi, alt: "Grazi, adotada em 2025, amada para sempre" },
                   ]}
                 />
               </div>
