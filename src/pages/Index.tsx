@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Heart, ShieldCheck, Sparkles, PawPrint, Stethoscope, Utensils, Home, Syringe,
   CheckCircle2, BookOpen, Clock, Users, AlertTriangle, Share2, Mail, Instagram,
@@ -153,12 +153,52 @@ const AdotadosCarousel = ({ images }: { images: { src: string; alt: string }[] }
   const next = () => setActive((i) => (i + 1) % total);
   const prev = () => setActive((i) => (i - 1 + total) % total);
 
+  // Swipe/drag handling (touch + mouse)
+  const dragState = useRef<{ startX: number; active: boolean; moved: boolean }>({
+    startX: 0,
+    active: false,
+    moved: false,
+  });
+  const SWIPE_THRESHOLD = 40;
+
+  const handlePointerDown = (clientX: number) => {
+    dragState.current = { startX: clientX, active: true, moved: false };
+  };
+  const handlePointerMove = (clientX: number) => {
+    if (!dragState.current.active) return;
+    if (Math.abs(clientX - dragState.current.startX) > 8) {
+      dragState.current.moved = true;
+    }
+  };
+  const handlePointerEnd = (clientX: number) => {
+    if (!dragState.current.active) return;
+    const delta = clientX - dragState.current.startX;
+    dragState.current.active = false;
+    if (Math.abs(delta) >= SWIPE_THRESHOLD) {
+      if (delta < 0) next();
+      else prev();
+    }
+  };
+
   return (
     <div className="relative w-full">
       {/* Linha verde decorativa atrás */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/60 to-transparent" aria-hidden="true" />
 
-      <div className="relative mx-auto flex h-[300px] items-center justify-center sm:h-[380px] md:h-[440px]">
+      <div
+        className="relative mx-auto flex h-[300px] touch-pan-y select-none items-center justify-center sm:h-[380px] md:h-[440px]"
+        onTouchStart={(e) => handlePointerDown(e.touches[0].clientX)}
+        onTouchMove={(e) => handlePointerMove(e.touches[0].clientX)}
+        onTouchEnd={(e) => handlePointerEnd(e.changedTouches[0].clientX)}
+        onMouseDown={(e) => handlePointerDown(e.clientX)}
+        onMouseMove={(e) => {
+          if (dragState.current.active) handlePointerMove(e.clientX);
+        }}
+        onMouseUp={(e) => handlePointerEnd(e.clientX)}
+        onMouseLeave={(e) => {
+          if (dragState.current.active) handlePointerEnd(e.clientX);
+        }}
+      >
         {images.map((img, i) => {
           let offset = i - active;
           if (offset > total / 2) offset -= total;
@@ -175,7 +215,14 @@ const AdotadosCarousel = ({ images }: { images: { src: string; alt: string }[] }
             <button
               key={i}
               type="button"
-              onClick={() => setActive(i)}
+              onClick={(e) => {
+                if (dragState.current.moved) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  return;
+                }
+                setActive(i);
+              }}
               aria-label={`Ver foto ${i + 1}`}
               className="absolute transition-all duration-500 ease-out focus:outline-none"
               style={{
