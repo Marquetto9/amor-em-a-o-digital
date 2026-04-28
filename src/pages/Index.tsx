@@ -820,7 +820,7 @@ const Index = () => {
           {[
             { name: "Bento", img: upBento, text: "Encontrado dentro de uma caixa de papelão na chuva, com apenas dois meses de vida e desnutrido. Bento foi resgatado, tratado e hoje espera por uma família que o ame para sempre." },
             { name: "Luna", img: upLuna, text: "Vítima de maus-tratos, Luna chegou ao abrigo arisca e desconfiada. Após meses de tratamento, vacinas e muito carinho, voltou a confiar nas pessoas." },
-            { name: "Thor", img: upThor, text: "Idoso e abandonado quando mais precisava de cuidados, Thor passou por cirurgia e tratamento prolongado. Hoje descansa em um lar temporário, com a dignidade que sempre mereceu." },
+            { name: "Liza", img: upThor, text: "Liza foi resgatada em estado crítico, com a pele gravemente machucada por um quadro avançado de sarna, já comprometido por infecções. Precisou de cuidados intensivos, tratamento prolongado e muito carinho para começar a se recuperar. Hoje, ela descansa em um lar temporário, finalmente recebendo o cuidado e a dignidade que sempre mereceu." },
           ].map((s, i) => (
             <article key={s.name} className={`grid items-center gap-6 md:grid-cols-2 md:gap-10 ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
               <div className="overflow-hidden rounded-3xl shadow-card ring-1 ring-border bg-muted flex items-center justify-center">
