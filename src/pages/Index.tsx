@@ -409,8 +409,8 @@ const Index = () => {
       <section id="quem-somos" aria-label="Fundadora do Refúgio das Patas" className="bg-gradient-to-b from-background via-secondary/20 to-background py-14 sm:py-20">
         <div className="container">
           <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
-            {/* Foto da fundadora */}
-            <div className="order-1 md:order-1">
+            {/* Foto da fundadora — visível apenas no DESKTOP (no mobile aparece entre os parágrafos abaixo) */}
+            <div className="hidden md:order-1 md:block">
               <div className="relative mx-auto w-full max-w-sm md:max-w-md">
                 <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-urgent/20 via-urgent/5 to-transparent blur-2xl" aria-hidden="true" />
                 <div className="relative overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-border">
@@ -457,6 +457,22 @@ const Index = () => {
                     à beira de uma estrada. Naquela noite, prometeu que nenhuma outra patinha precisaria
                     passar por aquilo sozinha.
                   </p>
+                  {/* Foto da fundadora — visível apenas no MOBILE, entre os parágrafos */}
+                  <div className="md:hidden">
+                    <div className="relative mx-auto my-2 w-full max-w-sm">
+                      <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-urgent/20 via-urgent/5 to-transparent blur-2xl" aria-hidden="true" />
+                      <div className="relative overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-border">
+                        <div className="relative w-full" style={{ paddingTop: "125%" }}>
+                          <img
+                            src={marianaFundadora}
+                            alt="Mariana, fundadora do Refúgio das Patas, segurando três filhotes resgatados"
+                            loading="lazy"
+                            className="absolute inset-0 h-full w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <p>
                     Foi assim que nasceu o <strong className="text-urgent">Refúgio das Patas</strong> —
                     um abrigo independente, <strong className="text-foreground">pequeno em estrutura, mas imenso em amor</strong>.
