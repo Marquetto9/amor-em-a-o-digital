@@ -745,37 +745,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 6. OFERTA REPETIDA ============ */}
-      <section className="bg-gradient-to-br from-primary to-primary-soft py-14 text-primary-foreground sm:py-20">
-        <div className="container">
-          <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-2">
-            <div className="relative mx-auto w-52 sm:w-64 md:w-full md:max-w-sm">
-              <div className="absolute -inset-6 rounded-full bg-white/15 blur-3xl" />
-              <img src={ebookMockup} alt="E-book solidário" loading="lazy" width={500} height={650} className="relative animate-float drop-shadow-2xl" />
-            </div>
-            <div className="text-center md:text-left">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-widest">
-                Oferta solidária
-              </span>
-              <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight sm:text-4xl">
-                Por R$ 29,90 você muda a história de um animal resgatado.
-              </h2>
-              <p className="mt-3 text-base text-primary-foreground/90">
-                Receba o e-book digital agora e seja parte concreta dessa corrente. Cada cópia adquirida é mais um prato de comida, uma consulta veterinária ou uma vacina.
-              </p>
-              <div className="mt-5 flex items-baseline justify-center gap-3 md:justify-start">
-                <span className="text-sm line-through opacity-70">R$ 49,90</span>
-                <span className="font-display text-5xl font-extrabold">R$ 29,90</span>
-              </div>
-              <Cta size="lg" className="mt-6">Comprar agora</Cta>
-              <p className="mt-4 inline-flex items-center gap-2 text-sm text-primary-foreground/90">
-                <Share2 className="h-4 w-4" /> Compartilhe a campanha e amplie o impacto.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 7. GALERIA ============ */}
       <section className="container py-14 sm:py-20">
         <SectionTitle
