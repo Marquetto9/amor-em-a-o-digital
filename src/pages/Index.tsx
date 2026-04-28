@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import {
   Heart, ShieldCheck, Sparkles, PawPrint, Stethoscope, Utensils, Home, Syringe,
   CheckCircle2, BookOpen, Clock, Users, AlertTriangle, Share2, Mail, Instagram,
-  Phone, MapPin, Lock, Download, Star, ChevronRight, Menu, X
+  Phone, MapPin, Lock, Download, Star, ChevronRight, ChevronLeft, Menu, X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -137,6 +137,93 @@ const useCounter = (target: number, start = 0) => {
     return () => clearInterval(id);
   }, [target, start]);
   return value;
+};
+
+/* ---------- Adotados Coverflow Carousel ---------- */
+const AdotadosCarousel = ({ images }: { images: { src: string; alt: string }[] }) => {
+  const [active, setActive] = useState(0);
+  const total = images.length;
+  const next = () => setActive((i) => (i + 1) % total);
+  const prev = () => setActive((i) => (i - 1 + total) % total);
+
+  return (
+    <div className="relative w-full">
+      {/* Linha verde decorativa atrás */}
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/60 to-transparent" aria-hidden="true" />
+
+      <div className="relative mx-auto flex h-[300px] items-center justify-center sm:h-[380px] md:h-[440px]">
+        {images.map((img, i) => {
+          let offset = i - active;
+          if (offset > total / 2) offset -= total;
+          if (offset < -total / 2) offset += total;
+          const abs = Math.abs(offset);
+          if (abs > 2) return null;
+
+          const translate = offset * 110; // px
+          const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.6;
+          const z = 50 - abs;
+          const opacity = abs === 0 ? 1 : abs === 1 ? 0.85 : 0.5;
+
+          return (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActive(i)}
+              aria-label={`Ver foto ${i + 1}`}
+              className="absolute transition-all duration-500 ease-out focus:outline-none"
+              style={{
+                transform: `translateX(${translate}px) scale(${scale})`,
+                zIndex: z,
+                opacity,
+              }}
+            >
+              <div className="overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-soft ring-1 ring-primary/20">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="block h-[260px] w-[200px] object-cover sm:h-[320px] sm:w-[250px] md:h-[380px] md:w-[300px]"
+                />
+              </div>
+            </button>
+          );
+        })}
+
+        {/* Setas */}
+        <button
+          type="button"
+          onClick={prev}
+          aria-label="Imagem anterior"
+          className="absolute left-1 z-[60] flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft transition hover:scale-110 hover:bg-primary/90 sm:left-3 sm:h-12 sm:w-12"
+        >
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label="Próxima imagem"
+          className="absolute right-1 z-[60] flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft transition hover:scale-110 hover:bg-primary/90 sm:right-3 sm:h-12 sm:w-12"
+        >
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+        </button>
+      </div>
+
+      {/* Indicadores */}
+      <div className="mt-6 flex items-center justify-center gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setActive(i)}
+            aria-label={`Ir para imagem ${i + 1}`}
+            className={`h-2.5 rounded-full transition-all ${
+              i === active ? "w-8 bg-primary" : "w-2.5 bg-primary/30 hover:bg-primary/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const Index = () => {
@@ -392,6 +479,60 @@ const Index = () => {
                     você, se importam. 💛
                   </p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ADOTADOS NO REFÚGIO ============ */}
+      <section id="adotados" aria-label="Adotados no Refúgio das Patas" className="bg-gradient-to-b from-background via-secondary/30 to-background py-14 sm:py-20">
+        <div className="container">
+          <div className="relative mx-auto max-w-5xl">
+            {/* Detalhe decorativo: filhote espiando por cima do card */}
+            <div className="pointer-events-none absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-1/2">
+              <div className="relative h-24 w-24 overflow-hidden rounded-full border-4 border-card bg-card shadow-soft ring-2 ring-primary/40 sm:h-28 sm:w-28">
+                <img
+                  src={upFilhotes}
+                  alt="Filhote espiando"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="relative rounded-[2rem] bg-card px-5 pb-10 pt-20 shadow-soft ring-1 ring-border sm:px-10 sm:pb-12 sm:pt-24">
+              <div className="mx-auto max-w-2xl text-center">
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-widest text-primary">
+                  <PawPrint className="h-3.5 w-3.5" /> Histórias felizes
+                </span>
+                <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight text-brown sm:text-4xl md:text-5xl">
+                  ADOTADOS NO <span className="text-primary">REFÚGIO</span>
+                </h2>
+                <p className="mt-3 text-base text-muted-foreground sm:text-lg">
+                  Veja as fotos de alguns dos nossos peludos que encontraram lares cheios de amor.
+                </p>
+              </div>
+
+              <div className="mt-10">
+                <AdotadosCarousel
+                  images={[
+                    { src: storyBento, alt: "Bento, adotado pelo Refúgio das Patas" },
+                    { src: storyLuna, alt: "Luna, adotada pelo Refúgio das Patas" },
+                    { src: storyThor, alt: "Thor, adotado pelo Refúgio das Patas" },
+                    { src: gallery1, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery2, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery3, alt: "Adotado do Refúgio das Patas" },
+                    { src: gallery4, alt: "Adotado do Refúgio das Patas" },
+                  ]}
+                />
+              </div>
+
+              <div className="mt-10 flex flex-col items-center gap-3">
+                <Cta size="lg">Quero ajudar</Cta>
+                <p className="text-sm text-muted-foreground">
+                  Juntos, podemos fazer a diferença! 🐾✨
+                </p>
               </div>
             </div>
           </div>
