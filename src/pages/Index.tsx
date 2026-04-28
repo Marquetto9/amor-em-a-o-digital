@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Heart, ShieldCheck, Sparkles, PawPrint, Stethoscope, Utensils, Home, Syringe,
   CheckCircle2, BookOpen, Clock, Users, AlertTriangle, Share2, Mail, Instagram,
