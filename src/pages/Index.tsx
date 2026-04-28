@@ -437,7 +437,7 @@ const Index = () => {
               style={{ aspectRatio: "4 / 3" }}
             >
               <iframe
-                src="https://player.vimeo.com/video/1186664326?controls=0&title=0&byline=0&portrait=0&badge=0&autopause=0&playsinline=1"
+                src="https://player.vimeo.com/video/1186664326?title=0&byline=0&portrait=0&badge=0&autopause=0&playsinline=1"
                 title="VSL Refúgio das Patas"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
