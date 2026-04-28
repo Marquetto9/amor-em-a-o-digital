@@ -139,6 +139,93 @@ const useCounter = (target: number, start = 0) => {
   return value;
 };
 
+/* ---------- Adotados Coverflow Carousel ---------- */
+const AdotadosCarousel = ({ images }: { images: { src: string; alt: string }[] }) => {
+  const [active, setActive] = useState(0);
+  const total = images.length;
+  const next = () => setActive((i) => (i + 1) % total);
+  const prev = () => setActive((i) => (i - 1 + total) % total);
+
+  return (
+    <div className="relative w-full">
+      {/* Linha verde decorativa atrás */}
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-gradient-to-r from-transparent via-primary/60 to-transparent" aria-hidden="true" />
+
+      <div className="relative mx-auto flex h-[300px] items-center justify-center sm:h-[380px] md:h-[440px]">
+        {images.map((img, i) => {
+          let offset = i - active;
+          if (offset > total / 2) offset -= total;
+          if (offset < -total / 2) offset += total;
+          const abs = Math.abs(offset);
+          if (abs > 2) return null;
+
+          const translate = offset * 110; // px
+          const scale = abs === 0 ? 1 : abs === 1 ? 0.78 : 0.6;
+          const z = 50 - abs;
+          const opacity = abs === 0 ? 1 : abs === 1 ? 0.85 : 0.5;
+
+          return (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActive(i)}
+              aria-label={`Ver foto ${i + 1}`}
+              className="absolute transition-all duration-500 ease-out focus:outline-none"
+              style={{
+                transform: `translateX(${translate}px) scale(${scale})`,
+                zIndex: z,
+                opacity,
+              }}
+            >
+              <div className="overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-soft ring-1 ring-primary/20">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  className="block h-[260px] w-[200px] object-cover sm:h-[320px] sm:w-[250px] md:h-[380px] md:w-[300px]"
+                />
+              </div>
+            </button>
+          );
+        })}
+
+        {/* Setas */}
+        <button
+          type="button"
+          onClick={prev}
+          aria-label="Imagem anterior"
+          className="absolute left-1 z-[60] flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft transition hover:scale-110 hover:bg-primary/90 sm:left-3 sm:h-12 sm:w-12"
+        >
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label="Próxima imagem"
+          className="absolute right-1 z-[60] flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-soft transition hover:scale-110 hover:bg-primary/90 sm:right-3 sm:h-12 sm:w-12"
+        >
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+        </button>
+      </div>
+
+      {/* Indicadores */}
+      <div className="mt-6 flex items-center justify-center gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setActive(i)}
+            aria-label={`Ir para imagem ${i + 1}`}
+            className={`h-2.5 rounded-full transition-all ${
+              i === active ? "w-8 bg-primary" : "w-2.5 bg-primary/30 hover:bg-primary/50"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const supporters = useCounter(1247);
