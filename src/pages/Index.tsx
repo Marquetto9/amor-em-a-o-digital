@@ -922,6 +922,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      <SocialProofPopup />
     </div>
   );
 };
