@@ -456,7 +456,10 @@ const Index = () => {
           >
             {showVslCta && (
               <a
-                href="#produto-solidario"
+                href={CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackInitiateCheckout}
                 className="group inline-flex w-[88%] max-w-md items-center justify-center gap-2 whitespace-nowrap rounded-full bg-urgent px-5 py-3 text-[15px] font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
               >
                 <Heart className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" />
