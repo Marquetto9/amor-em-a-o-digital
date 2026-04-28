@@ -317,49 +317,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ QUEM SOMOS ============ */}
-      <section id="quem-somos" aria-label="Quem Somos" className="bg-gradient-to-b from-background via-secondary/20 to-background py-14 sm:py-20">
+      {/* ============ FUNDADORA ============ */}
+      <section id="quem-somos" aria-label="Fundadora do Refúgio das Patas" className="bg-gradient-to-b from-background via-secondary/20 to-background py-14 sm:py-20">
         <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-block rounded-full bg-urgent/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-urgent">
-              Nossa História
-            </span>
-            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl md:text-5xl">
-              Quem Somos
-            </h2>
-            <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-urgent" />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              <p>
-                O <strong className="text-foreground">Refúgio das Patas</strong> é um abrigo
-                <strong className="text-urgent"> independente </strong>
-                de proteção animal localizado em <strong className="text-foreground">Minas Gerais</strong>.
-              </p>
-              <p>
-                Resgatamos, acolhemos e cuidamos de animais em situação de
-                <strong className="text-foreground"> abandono, maus-tratos e vulnerabilidade</strong>,
-                oferecendo a eles um lar seguro, alimentação, cuidados veterinários e, acima de tudo, muito amor.
-              </p>
-              <p>
-                Cada vida que chega até nós ganha uma nova chance. Nossa missão é
-                transformar histórias de sofrimento em histórias de esperança — uma patinha de cada vez.
-              </p>
-            </div>
-          </div>
-
-          {/* Espaço reservado para o vídeo */}
-          <div className="mx-auto mt-10 max-w-4xl sm:mt-14">
-            <div className="overflow-hidden rounded-2xl bg-card shadow-soft ring-1 ring-border sm:rounded-3xl">
-              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-                {/* TODO: Substituir o conteúdo abaixo por <iframe ...> ou <video ...> quando o vídeo for entregue */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-secondary/40 to-muted/40 p-6 text-center">
-                  <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-urgent/15 sm:h-20 sm:w-20">
-                    <Heart className="h-8 w-8 text-urgent sm:h-10 sm:w-10" fill="currentColor" />
+          <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-14">
+            {/* Foto da fundadora */}
+            <div className="order-1 md:order-1">
+              <div className="relative mx-auto w-full max-w-sm md:max-w-md">
+                <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-urgent/20 via-urgent/5 to-transparent blur-2xl" aria-hidden="true" />
+                <div className="relative overflow-hidden rounded-3xl bg-card shadow-soft ring-1 ring-border">
+                  <div className="relative w-full" style={{ paddingTop: "125%" }}>
+                    {/* TODO: Substituir o src abaixo pela foto da fundadora quando enviada */}
+                    <img
+                      src="/placeholder.svg"
+                      alt="Fundadora do Refúgio das Patas"
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
                   </div>
-                  <p className="text-sm font-semibold text-foreground sm:text-base">
-                    Em breve: vídeo do Refúgio das Patas
+                </div>
+                <div className="absolute -bottom-4 -right-4 hidden h-20 w-20 items-center justify-center rounded-2xl bg-urgent text-urgent-foreground shadow-soft sm:flex">
+                  <Heart className="h-9 w-9" fill="currentColor" />
+                </div>
+              </div>
+            </div>
+
+            {/* Storytelling */}
+            <div className="order-2 md:order-2">
+              <div className="md:border-l-2 md:border-urgent/40 md:pl-8">
+                <span className="inline-block rounded-full bg-urgent/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-urgent">
+                  Nossa História
+                </span>
+                <h2 className="mt-4 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl md:text-[2.65rem]">
+                  FUNDADORA DO <span className="text-urgent">REFÚGIO DAS PATAS</span>
+                </h2>
+                <p className="mt-4 text-lg italic leading-relaxed text-foreground/80 sm:text-xl">
+                  “Nós, como você, acreditamos no amor e no cuidado com cada vida.”
+                </p>
+                <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-[1.05rem]">
+                  <p>
+                    Meu nome é <strong className="text-foreground">Mariana</strong>, e há menos de um ano
+                    decidi transformar uma dor em propósito. Tudo começou quando encontrei a
+                    <strong className="text-foreground"> Pequena</strong>, uma cadelinha quase sem forças,
+                    abandonada na beira de uma estrada em Minas Gerais. Naquela noite, prometi a ela
+                    que nenhuma outra patinha precisaria passar por aquilo sozinha.
                   </p>
-                  <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-                    Espaço reservado para o vídeo institucional
+                  <p>
+                    Foi assim que nasceu o <strong className="text-urgent">Refúgio das Patas</strong> —
+                    um abrigo independente, pequeno em estrutura, mas
+                    <strong className="text-foreground"> imenso em amor</strong>. Em pouquíssimo tempo,
+                    já resgatamos <strong className="text-foreground">dezenas de vidas</strong>,
+                    cada uma com sua história de sofrimento transformada em esperança.
+                  </p>
+                  <p>
+                    Não temos patrocínio, nem grandes recursos. Faltam ração, remédios, espaço e descanso.
+                    O que não falta é <strong className="text-foreground">dedicação, fé e a luta diária</strong>
+                    para que cada animal acolhido tenha um lar, um prato de comida e alguém que o ame
+                    de verdade.
+                  </p>
+                  <p className="text-foreground">
+                    Quando você apoia o Refúgio das Patas, você se torna parte dessa história — e de
+                    cada vida que ainda vamos salvar. 💛
                   </p>
                 </div>
               </div>
