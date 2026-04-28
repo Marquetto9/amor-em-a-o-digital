@@ -353,7 +353,7 @@ const Index = () => {
       {/* ============ HEADER ============ */}
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between sm:h-20">
-          <a href="#topo" className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2">
             <img src={logo} alt="Refúgio das Patas" className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12" />
             <div className="leading-tight">
               <p className="font-display text-base font-bold text-brown sm:text-lg">Refúgio das Patas</p>
