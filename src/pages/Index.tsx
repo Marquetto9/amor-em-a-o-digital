@@ -32,6 +32,9 @@ import adotadaLexie from "@/assets/adotados/lexie.jpg";
 import adotadoScott from "@/assets/adotados/scott.jpg";
 import adotadaMaya from "@/assets/adotados/maya.jpg";
 import adotadaGrazi from "@/assets/adotados/grazi.jpg";
+import adotadaLiza from "@/assets/adotados/liza.jpg";
+import adotadoTed from "@/assets/adotados/ted.jpg";
+import adotadoFrank from "@/assets/adotados/frank.jpg";
 import upFamilia from "@/assets/up-familia.png";
 import upFilhotes from "@/assets/up-filhotes.png";
 import upRefeicao from "@/assets/up-refeicao.png";
@@ -181,12 +184,20 @@ const AdotadosCarousel = ({ images }: { images: { src: string; alt: string }[] }
                 opacity,
               }}
             >
-              <div className="overflow-hidden rounded-2xl border-2 border-primary/70 bg-card shadow-soft ring-1 ring-primary/20">
+              <div className="relative overflow-hidden rounded-2xl border-2 border-primary/70 bg-muted shadow-soft ring-1 ring-primary/20">
+                {/* Fundo blur com a própria imagem para preencher laterais */}
+                <img
+                  src={img.src}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-50"
+                />
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  className="block h-[260px] w-[200px] object-cover sm:h-[320px] sm:w-[250px] md:h-[380px] md:w-[300px]"
+                  className="relative block h-[260px] w-[200px] object-contain sm:h-[320px] sm:w-[250px] md:h-[380px] md:w-[300px]"
                 />
               </div>
             </button>
@@ -541,6 +552,9 @@ const Index = () => {
                     { src: adotadoScott, alt: "Scott aproveitando um dia na praia com sua família" },
                     { src: adotadaMaya, alt: "Maya, adaptada e feliz no novo lar" },
                     { src: adotadaGrazi, alt: "Grazi, adotada em 2025, amada para sempre" },
+                    { src: adotadaLiza, alt: "Liza, recuperada e em novo lar cheio de amor" },
+                    { src: adotadoTed, alt: "Ted, transformado pelo amor e adotado por sua nova família" },
+                    { src: adotadoFrank, alt: "Frank, ganhando um novo lar cheio de carinho" },
                   ]}
                 />
               </div>
