@@ -353,7 +353,7 @@ const Index = () => {
       {/* ============ HEADER ============ */}
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between sm:h-20">
-          <a href="#topo" className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2">
             <img src={logo} alt="Refúgio das Patas" className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12" />
             <div className="leading-tight">
               <p className="font-display text-base font-bold text-brown sm:text-lg">Refúgio das Patas</p>
@@ -363,8 +363,8 @@ const Index = () => {
 
           <nav className="hidden items-center gap-7 text-sm font-medium text-foreground lg:flex">
             <a href="#como-ajudar" className="hover:text-primary">Como ajudar</a>
-            <a href="#ebook" className="hover:text-primary">Sobre o e-book</a>
             <a href="#causa" className="hover:text-primary">A causa</a>
+            <a href="#comprar" className="hover:text-primary">Apoiar</a>
             <a href="#contato" className="hover:text-primary">Contato</a>
           </nav>
 
@@ -390,8 +390,8 @@ const Index = () => {
           <div className="border-t border-border bg-background lg:hidden">
             <nav className="container flex flex-col gap-1 py-4 text-sm font-medium">
               <a href="#como-ajudar" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Como ajudar</a>
-              <a href="#ebook" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Sobre o e-book</a>
               <a href="#causa" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">A causa</a>
+              <a href="#comprar" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Apoiar</a>
               <a href="#contato" onClick={() => setMenuOpen(false)} className="rounded-md px-3 py-2 hover:bg-muted">Contato</a>
               <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" onClick={() => { setMenuOpen(false); trackInitiateCheckout(); }} className="mt-2 rounded-full bg-urgent px-5 py-3 text-center text-xs font-bold uppercase text-urgent-foreground">
                 Quero ajudar comprando
@@ -456,7 +456,10 @@ const Index = () => {
           >
             {showVslCta && (
               <a
-                href="#produto-solidario"
+                href={CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackInitiateCheckout}
                 className="group inline-flex w-[88%] max-w-md items-center justify-center gap-2 whitespace-nowrap rounded-full bg-urgent px-5 py-3 text-[15px] font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
               >
                 <Heart className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" />
@@ -611,47 +614,6 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground">
                   Juntos, podemos fazer a diferença! 🐾✨
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
-      <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
-        <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
-        <div className="container">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-card p-5 shadow-soft ring-1 ring-border sm:p-8">
-            <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-              <div className="text-center md:text-left">
-                <span className="inline-flex items-center gap-2 rounded-full bg-urgent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-urgent">
-                  <Sparkles className="h-3 w-3" /> Produto solidário
-                </span>
-                <h1 className="mt-3 font-display text-2xl font-bold leading-tight text-brown sm:text-3xl md:text-4xl">
-                  Ajude comprando o e-book solidário
-                </h1>
-                <p className="mt-2 text-sm text-muted-foreground sm:text-base">
-                  Adquira o e-book por <strong className="text-brown">R$ 29,90</strong> e ajude o Refúgio das Patas a continuar salvando vidas.
-                </p>
-
-                <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:items-center md:items-start md:justify-start">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-xs text-muted-foreground line-through">R$ 49,90</span>
-                    <span className="font-display text-4xl font-extrabold text-urgent sm:text-5xl">R$ 29,90</span>
-                  </div>
-                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">à vista no Pix ou cartão</span>
-                </div>
-
-                <Cta size="lg" className="mt-5">Comprar agora</Cta>
-                <p className="mt-3 flex items-center justify-center gap-3 text-[11px] text-muted-foreground md:justify-start">
-                  <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3" /> compra segura</span>
-                  <span className="inline-flex items-center gap-1"><Download className="h-3 w-3" /> entrega imediata</span>
-                </p>
-              </div>
-
-              <div className="relative mx-auto w-44 sm:w-56 md:w-64">
-                <div className="absolute -inset-4 rounded-full bg-primary-soft/30 blur-2xl" />
-                <img src={ebookMockup} alt="E-book Refúgio das Patas" className="relative animate-float drop-shadow-2xl" width={400} height={520} />
               </div>
             </div>
           </div>
@@ -938,49 +900,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 11. SOBRE O E-BOOK ============ */}
-      <section id="ebook" className="container py-14 sm:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-          <div className="relative mx-auto w-56 sm:w-72 md:w-full md:max-w-md">
-            <div className="absolute -inset-6 rounded-full bg-primary-soft/30 blur-3xl" />
-            <img src={ebookMockup} alt="E-book Guia do Cuidado e Amor Animal" loading="lazy" width={600} height={780} className="relative animate-float drop-shadow-2xl" />
-          </div>
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary">
-              <BookOpen className="h-3 w-3" /> O que você recebe
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-brown sm:text-4xl">
-              Guia do Cuidado e Amor Animal
-            </h2>
-            <p className="mt-2 text-base text-muted-foreground">Um material digital prático, ilustrado e cheio de orientações úteis para quem ama cães e gatos.</p>
-
-            <ul className="mt-5 space-y-2 text-sm">
-              {[
-                "Cuidados básicos do dia a dia com cães e gatos",
-                "Adoção responsável: o que considerar antes",
-                "Alimentação correta e rotina saudável",
-                "Bem-estar e enriquecimento ambiental",
-                "Cuidados especiais com animais resgatados",
-                "Sinais de alerta e quando procurar o veterinário",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 grid grid-cols-3 gap-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-              <div className="rounded-xl bg-secondary/40 p-3"><Download className="mx-auto mb-1 h-4 w-4 text-primary" />PDF Digital</div>
-              <div className="rounded-xl bg-secondary/40 p-3"><Clock className="mx-auto mb-1 h-4 w-4 text-primary" />Entrega imediata</div>
-              <div className="rounded-xl bg-secondary/40 p-3"><BookOpen className="mx-auto mb-1 h-4 w-4 text-primary" />+ 60 páginas</div>
-            </div>
-
-            <Cta size="lg" className="mt-6">Quero comprar</Cta>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 12. BLOCO FINAL DE COMPRA ============ */}
       <section id="comprar" className="bg-urgent py-14 text-urgent-foreground sm:py-20">
         <div className="container">
@@ -1070,28 +989,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 15. CTA FINAL ============ */}
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 -z-10">
-          <img src={heroPets} alt="" className="h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/95 to-background" />
-        </div>
-        <div className="container text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-urgent/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-urgent">
-            Última chamada
-          </span>
-          <h2 className="mx-auto mt-4 max-w-3xl font-display text-3xl font-extrabold leading-tight text-brown text-balance sm:text-5xl">
-            Seu gesto pode transformar a vida de um animal resgatado hoje.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Por apenas R$ 29,90, você leva um e-book útil pra casa e mantém viva a missão do Refúgio das Patas.
-          </p>
-          <div className="mt-8">
-            <Cta size="xl">Ajudar com R$ 29,90</Cta>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 16. FOOTER ============ */}
       <footer id="contato" className="border-t border-border bg-brown text-brown-foreground">
         <div className="container py-12">
@@ -1112,10 +1009,10 @@ const Index = () => {
             <div>
               <p className="text-xs font-bold uppercase tracking-widest opacity-80">Links úteis</p>
               <ul className="mt-3 space-y-2 text-sm">
-                <li><a href="#topo" className="hover:underline">Início</a></li>
-                <li><a href="#ebook" className="hover:underline">Sobre o e-book</a></li>
+                <li><a href="#" className="hover:underline">Início</a></li>
                 <li><a href="#causa" className="hover:underline">A causa</a></li>
-                <li><a href="#comprar" className="hover:underline">Comprar agora</a></li>
+                <li><a href="#como-ajudar" className="hover:underline">Como ajudar</a></li>
+                <li><a href="#comprar" className="hover:underline">Apoiar agora</a></li>
               </ul>
             </div>
 
