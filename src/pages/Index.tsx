@@ -820,37 +820,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 12. BLOCO FINAL DE COMPRA ============ */}
-      <section id="comprar" className="bg-urgent py-14 text-urgent-foreground sm:py-20">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-widest">
-              <Heart className="h-3 w-3" fill="currentColor" /> Sua chance de ajudar
-            </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
-              R$ 29,90 que viram comida, remédio e abrigo.
-            </h2>
-            <p className="mt-3 text-base text-urgent-foreground/90 sm:text-lg">
-              Receba o e-book digital agora mesmo, com pagamento seguro e entrega imediata por e-mail.
-            </p>
-
-            <div className="mx-auto mt-8 max-w-md rounded-3xl bg-card p-6 text-center text-foreground shadow-glow ring-1 ring-white/30 sm:p-8">
-              <img src={ebookMockup} alt="E-book" loading="lazy" width={200} height={260} className="mx-auto h-40 w-auto drop-shadow-xl" />
-              <div className="mt-4 flex items-baseline justify-center gap-2">
-                <span className="text-sm text-muted-foreground line-through">R$ 49,90</span>
-                <span className="font-display text-5xl font-extrabold text-urgent">R$ 29,90</span>
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">100% revertido para o Refúgio das Patas</p>
-              <Cta size="xl" className="mt-5">Comprar agora</Cta>
-              <div className="mt-4 flex items-center justify-center gap-4 text-[11px] text-muted-foreground">
-                <span className="inline-flex items-center gap-1"><Lock className="h-3 w-3" /> compra segura</span>
-                <span className="inline-flex items-center gap-1"><Download className="h-3 w-3" /> entrega digital</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 13. PROVA SOCIAL ============ */}
       <section className="container py-14 sm:py-20">
         <SectionTitle
