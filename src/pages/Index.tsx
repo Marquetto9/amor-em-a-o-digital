@@ -552,6 +552,9 @@ const Index = () => {
                     { src: adotadoScott, alt: "Scott aproveitando um dia na praia com sua família" },
                     { src: adotadaMaya, alt: "Maya, adaptada e feliz no novo lar" },
                     { src: adotadaGrazi, alt: "Grazi, adotada em 2025, amada para sempre" },
+                    { src: adotadaLiza, alt: "Liza, recuperada e em novo lar cheio de amor" },
+                    { src: adotadoTed, alt: "Ted, transformado pelo amor e adotado por sua nova família" },
+                    { src: adotadoFrank, alt: "Frank, ganhando um novo lar cheio de carinho" },
                   ]}
                 />
               </div>
