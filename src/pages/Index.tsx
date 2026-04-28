@@ -317,9 +317,59 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ============ QUEM SOMOS ============ */}
+      <section id="quem-somos" aria-label="Quem Somos" className="bg-gradient-to-b from-background via-secondary/20 to-background py-14 sm:py-20">
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <span className="inline-block rounded-full bg-urgent/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-urgent">
+              Nossa História
+            </span>
+            <h2 className="mt-4 text-3xl font-extrabold leading-tight text-foreground sm:text-4xl md:text-5xl">
+              Quem Somos
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-urgent" />
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p>
+                O <strong className="text-foreground">Refúgio das Patas</strong> é um abrigo
+                <strong className="text-urgent"> independente </strong>
+                de proteção animal localizado em <strong className="text-foreground">Minas Gerais</strong>.
+              </p>
+              <p>
+                Resgatamos, acolhemos e cuidamos de animais em situação de
+                <strong className="text-foreground"> abandono, maus-tratos e vulnerabilidade</strong>,
+                oferecendo a eles um lar seguro, alimentação, cuidados veterinários e, acima de tudo, muito amor.
+              </p>
+              <p>
+                Cada vida que chega até nós ganha uma nova chance. Nossa missão é
+                transformar histórias de sofrimento em histórias de esperança — uma patinha de cada vez.
+              </p>
+            </div>
+          </div>
+
+          {/* Espaço reservado para o vídeo */}
+          <div className="mx-auto mt-10 max-w-4xl sm:mt-14">
+            <div className="overflow-hidden rounded-2xl bg-card shadow-soft ring-1 ring-border sm:rounded-3xl">
+              <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                {/* TODO: Substituir o conteúdo abaixo por <iframe ...> ou <video ...> quando o vídeo for entregue */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-secondary/40 to-muted/40 p-6 text-center">
+                  <div className="mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-urgent/15 sm:h-20 sm:w-20">
+                    <Heart className="h-8 w-8 text-urgent sm:h-10 sm:w-10" fill="currentColor" />
+                  </div>
+                  <p className="text-sm font-semibold text-foreground sm:text-base">
+                    Em breve: vídeo do Refúgio das Patas
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+                    Espaço reservado para o vídeo institucional
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ============ 1. OFFER BLOCK (acima do hero) ============ */}
       <section id="topo" className="bg-gradient-to-b from-secondary/40 to-background py-8 sm:py-12">
-        {/* placeholder anchor moved below; original kept intact */}
         <div id="produto-solidario" className="-mt-20 pt-20" aria-hidden="true" />
         <div className="container">
           <div className="mx-auto max-w-5xl rounded-3xl bg-card p-5 shadow-soft ring-1 ring-border sm:p-8">
