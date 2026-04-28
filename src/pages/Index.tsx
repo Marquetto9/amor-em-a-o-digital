@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import SocialProofPopup from "@/components/SocialProofPopup";
 import logo from "@/assets/logo-refugio.png";
 import heroPets from "@/assets/hero-pets.jpg";
 import ebookMockup from "@/assets/ebook-capa.png";
