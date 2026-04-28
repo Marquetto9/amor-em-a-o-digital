@@ -1009,10 +1009,10 @@ const Index = () => {
             <div>
               <p className="text-xs font-bold uppercase tracking-widest opacity-80">Links úteis</p>
               <ul className="mt-3 space-y-2 text-sm">
-                <li><a href="#topo" className="hover:underline">Início</a></li>
-                <li><a href="#ebook" className="hover:underline">Sobre o e-book</a></li>
+                <li><a href="#" className="hover:underline">Início</a></li>
                 <li><a href="#causa" className="hover:underline">A causa</a></li>
-                <li><a href="#comprar" className="hover:underline">Comprar agora</a></li>
+                <li><a href="#como-ajudar" className="hover:underline">Como ajudar</a></li>
+                <li><a href="#comprar" className="hover:underline">Apoiar agora</a></li>
               </ul>
             </div>
 
