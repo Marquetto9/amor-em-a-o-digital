@@ -897,49 +897,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ============ 11. SOBRE O E-BOOK ============ */}
-      <section id="ebook" className="container py-14 sm:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-          <div className="relative mx-auto w-56 sm:w-72 md:w-full md:max-w-md">
-            <div className="absolute -inset-6 rounded-full bg-primary-soft/30 blur-3xl" />
-            <img src={ebookMockup} alt="E-book Guia do Cuidado e Amor Animal" loading="lazy" width={600} height={780} className="relative animate-float drop-shadow-2xl" />
-          </div>
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-primary">
-              <BookOpen className="h-3 w-3" /> O que você recebe
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-extrabold leading-tight text-brown sm:text-4xl">
-              Guia do Cuidado e Amor Animal
-            </h2>
-            <p className="mt-2 text-base text-muted-foreground">Um material digital prático, ilustrado e cheio de orientações úteis para quem ama cães e gatos.</p>
-
-            <ul className="mt-5 space-y-2 text-sm">
-              {[
-                "Cuidados básicos do dia a dia com cães e gatos",
-                "Adoção responsável: o que considerar antes",
-                "Alimentação correta e rotina saudável",
-                "Bem-estar e enriquecimento ambiental",
-                "Cuidados especiais com animais resgatados",
-                "Sinais de alerta e quando procurar o veterinário",
-              ].map((t) => (
-                <li key={t} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 grid grid-cols-3 gap-2 text-center text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-              <div className="rounded-xl bg-secondary/40 p-3"><Download className="mx-auto mb-1 h-4 w-4 text-primary" />PDF Digital</div>
-              <div className="rounded-xl bg-secondary/40 p-3"><Clock className="mx-auto mb-1 h-4 w-4 text-primary" />Entrega imediata</div>
-              <div className="rounded-xl bg-secondary/40 p-3"><BookOpen className="mx-auto mb-1 h-4 w-4 text-primary" />+ 60 páginas</div>
-            </div>
-
-            <Cta size="lg" className="mt-6">Quero comprar</Cta>
-          </div>
-        </div>
-      </section>
-
       {/* ============ 12. BLOCO FINAL DE COMPRA ============ */}
       <section id="comprar" className="bg-urgent py-14 text-urgent-foreground sm:py-20">
         <div className="container">
