@@ -861,6 +861,7 @@ const Index = () => {
               { q: "Posso comprar mesmo sem conhecer a instituição?", a: "Pode sim. Mantemos transparência total no nosso trabalho e você pode acompanhar pelas redes sociais e relatórios mensais." },
               { q: "O e-book é em formato digital?", a: "Sim, é um PDF leve, otimizado para celular, tablet e computador. Você pode ler quando quiser, sem internet." },
               { q: "Como funciona essa campanha solidária?", a: "É simples: você compra um e-book útil por R$ 29,90 e o valor vira cuidado para os animais resgatados pelo refúgio. Apoio com propósito e entrega real." },
+              { q: "De onde é o Refúgio das Patas?", a: "O Refúgio das Patas fica em Camanducaia, Minas Gerais. É de lá que cuidamos diariamente dos animais resgatados e mantemos essa campanha solidária para ajudar na alimentação, cuidados e proteção deles." },
             ].map((f, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5 shadow-card">
                 <AccordionTrigger className="py-4 text-left text-sm font-bold text-brown hover:no-underline sm:text-base">{f.q}</AccordionTrigger>
