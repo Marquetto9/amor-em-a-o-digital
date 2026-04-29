@@ -368,6 +368,15 @@ const Index = () => {
       if (!anchor) return;
       const href = anchor.getAttribute("href") || "";
       if (href.includes("pay.kiwify.com.br/eqAb4HY")) {
+        // Garante que UTMs/click IDs da URL atual sejam preservados no checkout
+        try {
+          const fresh = buildCheckoutUrl();
+          if (anchor.getAttribute("href") !== fresh) {
+            anchor.setAttribute("href", fresh);
+          }
+        } catch {
+          /* noop */
+        }
         trackInitiateCheckout();
       }
     };
