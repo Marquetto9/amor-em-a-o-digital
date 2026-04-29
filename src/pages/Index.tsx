@@ -434,17 +434,9 @@ const Index = () => {
           <div className="mx-auto mt-8 w-full max-w-[680px] sm:mt-10">
             <div
               className="relative overflow-hidden rounded-2xl border-2 border-urgent bg-black shadow-2xl"
-              style={{ aspectRatio: "4 / 3" }}
             >
-              <iframe
-                src="https://player.vimeo.com/video/1186664326?title=0&byline=0&portrait=0&badge=0&autopause=0&playsinline=1"
-                title="VSL Refúgio das Patas"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 h-full w-full"
-                frameBorder={0}
-              />
+              {/* @ts-expect-error - Wistia custom element */}
+              <wistia-player media-id="xptxi3657f" aspect="1.3333333333333333" style={{ display: "block", width: "100%" }}></wistia-player>
             </div>
           </div>
 
