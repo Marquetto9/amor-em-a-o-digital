@@ -57,7 +57,40 @@ import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
 import galMatilha from "@/assets/gal-matilha.png";
 
-const CHECKOUT_URL = "https://pay.kiwify.com.br/eqAb4HY?utm_source=facebook&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_content={{ad.name}}&utm_term={{adset.name}}";
+const CHECKOUT_BASE = "https://pay.kiwify.com.br/eqAb4HY";
+// Defaults usados quando o usuário NÃO chega com UTMs (ex.: tráfego direto).
+// Se chegarem UTMs reais na URL, elas sobrescrevem estes valores.
+const CHECKOUT_DEFAULT_PARAMS: Record<string, string> = {
+  utm_source: "facebook",
+  utm_medium: "cpc",
+  utm_campaign: "{{campaign.name}}",
+  utm_content: "{{ad.name}}",
+  utm_term: "{{adset.name}}",
+};
+
+const TRACKING_KEYS = [
+  "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+  "campaign_id", "adset_id", "ad_id", "fbclid", "gclid", "ttclid",
+  "src", "sck", "xcod",
+];
+
+const buildCheckoutUrl = (): string => {
+  const params = new URLSearchParams();
+  // 1) defaults
+  Object.entries(CHECKOUT_DEFAULT_PARAMS).forEach(([k, v]) => params.set(k, v));
+  // 2) sobrescreve com o que vier na URL atual (apenas chaves de tracking)
+  if (typeof window !== "undefined") {
+    const incoming = new URLSearchParams(window.location.search);
+    TRACKING_KEYS.forEach((key) => {
+      const v = incoming.get(key);
+      if (v) params.set(key, v);
+    });
+  }
+  return `${CHECKOUT_BASE}?${params.toString()}`;
+};
+
+// Valor inicial (será reavaliado no client via useState)
+const CHECKOUT_URL_FALLBACK = `${CHECKOUT_BASE}?${new URLSearchParams(CHECKOUT_DEFAULT_PARAMS).toString()}`;
 
 declare global {
   interface Window {
@@ -97,7 +130,7 @@ const trackInitiateCheckout = () => {
 };
 
 /* ---------- Building blocks ---------- */
-const Cta = ({ children, className = "", size = "md" }: { children: React.ReactNode; className?: string; size?: "md" | "lg" | "xl" }) => {
+const Cta = ({ children, className = "", size = "md", checkoutUrl }: { children: React.ReactNode; className?: string; size?: "md" | "lg" | "xl"; checkoutUrl: string }) => {
   const sizes = {
     md: "px-6 py-3 text-sm",
     lg: "px-8 py-4 text-base",
@@ -105,7 +138,7 @@ const Cta = ({ children, className = "", size = "md" }: { children: React.ReactN
   };
   return (
     <a
-      href={CHECKOUT_URL}
+      href={checkoutUrl}
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackInitiateCheckout}
@@ -296,6 +329,11 @@ const Index = () => {
   const goal = 2500;
   const progress = Math.round((ebooks / goal) * 100);
   const [showVslCta, setShowVslCta] = useState(false);
+  const [CHECKOUT_URL, setCheckoutUrl] = useState<string>(CHECKOUT_URL_FALLBACK);
+
+  useEffect(() => {
+    setCheckoutUrl(buildCheckoutUrl());
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowVslCta(true), 50000);
@@ -330,6 +368,15 @@ const Index = () => {
       if (!anchor) return;
       const href = anchor.getAttribute("href") || "";
       if (href.includes("pay.kiwify.com.br/eqAb4HY")) {
+        // Garante que UTMs/click IDs da URL atual sejam preservados no checkout
+        try {
+          const fresh = buildCheckoutUrl();
+          if (anchor.getAttribute("href") !== fresh) {
+            anchor.setAttribute("href", fresh);
+          }
+        } catch {
+          /* noop */
+        }
         trackInitiateCheckout();
       }
     };
@@ -603,7 +650,7 @@ const Index = () => {
               </div>
 
               <div className="mt-10 flex flex-col items-center gap-3">
-                <Cta size="lg">Quero ajudar</Cta>
+                <Cta size="lg" checkoutUrl={CHECKOUT_URL}>Quero ajudar</Cta>
                 <p className="text-sm text-muted-foreground">
                   Juntos, podemos fazer a diferença! 🐾✨
                 </p>
@@ -662,7 +709,7 @@ const Index = () => {
               Sem o apoio de pessoas como você, não conseguiremos manter essas vidas em pé. <strong className="text-brown">Comprar o e-book hoje</strong> é a forma mais rápida e concreta de fazer diferença <strong>ainda esta semana</strong>.
             </p>
             <div className="mt-7">
-              <Cta size="lg">Comprar e ajudar agora</Cta>
+              <Cta size="lg" checkoutUrl={CHECKOUT_URL}>Comprar e ajudar agora</Cta>
             </div>
           </div>
         </div>
