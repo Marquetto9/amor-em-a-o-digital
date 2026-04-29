@@ -36,6 +36,7 @@ import adotadaGrazi from "@/assets/adotados/grazi.jpg";
 import adotadaLiza from "@/assets/adotados/liza.jpg";
 import adotadoTed from "@/assets/adotados/ted.jpg";
 import adotadoFrank from "@/assets/adotados/frank.jpg";
+import adotadoApolo from "@/assets/adotados/apolo.jpg";
 import upFamilia from "@/assets/up-familia.png";
 import upFilhotes from "@/assets/up-filhotes.png";
 import upRefeicao from "@/assets/up-refeicao.png";
@@ -645,6 +646,7 @@ const Index = () => {
                     { src: adotadaLiza, alt: "Liza, recuperada e em novo lar cheio de amor" },
                     { src: adotadoTed, alt: "Ted, transformado pelo amor e adotado por sua nova família" },
                     { src: adotadoFrank, alt: "Frank, ganhando um novo lar cheio de carinho" },
+                    { src: adotadoApolo, alt: "Apolo celebrando um Natal em família, cercado de amor" },
                   ]}
                 />
               </div>
