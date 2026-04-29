@@ -641,7 +641,7 @@ const Index = () => {
               </div>
 
               <div className="mt-10 flex flex-col items-center gap-3">
-                <Cta size="lg">Quero ajudar</Cta>
+                <Cta size="lg" checkoutUrl={CHECKOUT_URL}>Quero ajudar</Cta>
                 <p className="text-sm text-muted-foreground">
                   Juntos, podemos fazer a diferença! 🐾✨
                 </p>
@@ -700,7 +700,7 @@ const Index = () => {
               Sem o apoio de pessoas como você, não conseguiremos manter essas vidas em pé. <strong className="text-brown">Comprar o e-book hoje</strong> é a forma mais rápida e concreta de fazer diferença <strong>ainda esta semana</strong>.
             </p>
             <div className="mt-7">
-              <Cta size="lg">Comprar e ajudar agora</Cta>
+              <Cta size="lg" checkoutUrl={CHECKOUT_URL}>Comprar e ajudar agora</Cta>
             </div>
           </div>
         </div>
