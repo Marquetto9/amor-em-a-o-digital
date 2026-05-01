@@ -470,11 +470,12 @@ const Index = () => {
             <span className="inline-flex items-center gap-2 rounded-full bg-urgent/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white ring-1 ring-urgent/40">
               <Heart className="h-3 w-3" fill="currentColor" /> Campanha solidária
             </span>
-            <h2 className="mt-4 font-display text-2xl font-extrabold leading-tight text-balance text-white drop-shadow-lg sm:text-3xl md:text-4xl">
-              SOMOS UM ABRIGO <span className="text-highlight">INDEPENDENTE</span> CUIDANDO DE MAIS DE <span className="text-highlight">100 VIDAS</span>
-            </h2>
-            <p className="mt-3 text-sm font-medium text-white/90 sm:text-base md:text-lg">
-              Cada compra ajuda a manter nossos animais alimentados, protegidos e cuidados.
+            <h1 className="mt-4 font-display text-[1.6rem] font-extrabold leading-[1.15] text-balance text-white drop-shadow-lg sm:text-3xl md:text-4xl lg:text-5xl">
+              UM ABRIGO INDEPENDENTE LUTANDO POR{" "}
+              <span className="whitespace-nowrap text-highlight">MAIS DE 100 ANIMAIS</span>
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-balance text-[0.95rem] font-medium leading-relaxed text-white/90 sm:text-base md:text-lg">
+              Todos os dias, animais resgatados precisam de alimento, tratamento e proteção para continuar tendo uma chance de recomeçar.
             </p>
           </div>
 
