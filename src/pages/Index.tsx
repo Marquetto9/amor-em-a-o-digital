@@ -480,12 +480,12 @@ const Index = () => {
           </div>
 
           {/* Vídeo VSL */}
-          <div className="mx-auto mt-8 w-full max-w-[680px] sm:mt-10">
+          <div className="mx-auto mt-8 w-full max-w-[960px] sm:mt-10">
             <div
               className="relative overflow-hidden rounded-2xl border-2 border-urgent bg-black shadow-2xl"
             >
               {/* @ts-expect-error - Wistia custom element */}
-              <wistia-player media-id="xptxi3657f" aspect="1.3333333333333333" style={{ display: "block", width: "100%" }}></wistia-player>
+              <wistia-player media-id="kny8x0pa65" aspect="1.7777777777777777" style={{ display: "block", width: "100%" }}></wistia-player>
             </div>
           </div>
 
