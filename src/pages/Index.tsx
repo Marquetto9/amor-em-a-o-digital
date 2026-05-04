@@ -58,7 +58,7 @@ import galVet from "@/assets/gal-vet.png";
 import galGatos from "@/assets/gal-gatos.png";
 import galMatilha from "@/assets/gal-matilha.png";
 
-const CHECKOUT_BASE = "https://pay.cakto.com.br/55jsdnf_870436";
+const CHECKOUT_BASE = "https://ggcheckout.app/checkout/v2/0l9N9oyh0ZP5qnKXMAqc";
 // Defaults usados quando o usuário NÃO chega com UTMs (ex.: tráfego direto).
 // Se chegarem UTMs reais na URL, elas sobrescrevem estes valores.
 const CHECKOUT_DEFAULT_PARAMS: Record<string, string> = {
@@ -355,7 +355,7 @@ const Index = () => {
   }, []);
 
   // Fallback global: dispara InitiateCheckout para QUALQUER clique em link
-  // que aponte para o checkout da Cakto (pay.cakto.com.br/55jsdnf_870436),
+  // que aponte para o checkout (ggcheckout.app/.../0l9N9oyh0ZP5qnKXMAqc),
   // garantindo a captura mesmo se algum CTA for adicionado sem o handler.
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -368,7 +368,7 @@ const Index = () => {
       const anchor = target.closest("a") as HTMLAnchorElement | null;
       if (!anchor) return;
       const href = anchor.getAttribute("href") || "";
-      if (href.includes("pay.cakto.com.br/55jsdnf_870436")) {
+      if (href.includes("ggcheckout.app/checkout/v2/0l9N9oyh0ZP5qnKXMAqc")) {
         // Garante que UTMs/click IDs da URL atual sejam preservados no checkout
         try {
           const fresh = buildCheckoutUrl();
