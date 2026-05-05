@@ -337,8 +337,34 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowVslCta(true), 50000);
-    return () => clearTimeout(timer);
+    if (typeof window === "undefined") return;
+    const THRESHOLD = 180; // 3 minutos
+    let fallbackTimer: number | undefined;
+    let unbound = false;
+
+    // Fallback: garante que o CTA apareça mesmo se a API da Wistia falhar
+    fallbackTimer = window.setTimeout(() => setShowVslCta(true), THRESHOLD * 1000);
+
+    // @ts-expect-error - _wq é a fila global da Wistia
+    window._wq = window._wq || [];
+    const handler = {
+      id: "kny8x0pa65",
+      onReady: (video: { bind: (evt: string, cb: (s: number) => void) => void }) => {
+        video.bind("secondchange", (s: number) => {
+          if (s >= THRESHOLD && !unbound) {
+            unbound = true;
+            setShowVslCta(true);
+          }
+        });
+      },
+    };
+    // @ts-expect-error - push do queue da Wistia
+    window._wq.push(handler);
+
+    return () => {
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      unbound = true;
+    };
   }, []);
 
   useEffect(() => {
