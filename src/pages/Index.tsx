@@ -490,23 +490,22 @@ const Index = () => {
         {/* Overlay escuro para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-b from-brown/80 via-brown/60 to-brown/85" aria-hidden="true" />
 
-        <div className="container relative z-10 py-10 sm:py-16 md:py-20">
+        <div className="container relative z-10 px-4 py-8 sm:py-16 md:py-20">
           {/* Chamada */}
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-urgent/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white ring-1 ring-urgent/40">
               <Heart className="h-3 w-3" fill="currentColor" /> Campanha solidária
             </span>
-            <h1 className="mt-4 font-display text-[1.6rem] font-extrabold leading-[1.15] text-balance text-white drop-shadow-lg sm:text-3xl md:text-4xl lg:text-5xl">
-              UM ABRIGO INDEPENDENTE LUTANDO POR{" "}
-              <span className="whitespace-nowrap text-highlight">MAIS DE 100 ANIMAIS</span>
+            <h1 className="mt-3 font-display text-[1.5rem] font-extrabold leading-[1.2] text-balance text-white drop-shadow-lg sm:mt-4 sm:text-3xl md:text-4xl lg:text-5xl">
+              “Uma <span className="text-highlight">caixa no meio da estrada</span>… e uma decisão que mudou tudo”
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-balance text-[0.95rem] font-medium leading-relaxed text-white/90 sm:text-base md:text-lg">
-              Todos os dias, animais resgatados precisam de alimento, tratamento e proteção para continuar tendo uma chance de recomeçar.
+            <p className="mx-auto mt-3 max-w-2xl text-balance text-[0.95rem] font-medium leading-relaxed text-white/90 sm:mt-4 sm:text-base md:text-lg">
+              Três filhotes foram deixados em uma caixa no meio da pista. Aquela cena deu origem a uma missão que hoje precisa de ajuda.
             </p>
           </div>
 
           {/* Vídeo VSL */}
-          <div className="mx-auto mt-8 w-full max-w-[960px] sm:mt-10">
+          <div className="mx-auto mt-5 w-full max-w-[960px] sm:mt-10">
             <div
               className="relative overflow-hidden rounded-2xl border-2 border-urgent bg-black shadow-2xl"
             >
@@ -517,7 +516,7 @@ const Index = () => {
 
           {/* CTA */}
           <div
-            className={`mt-8 flex justify-center transition-all duration-700 ease-out sm:mt-10 ${
+            className={`mt-5 flex justify-center transition-all duration-700 ease-out sm:mt-10 ${
               showVslCta ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-4"
             }`}
             aria-hidden={!showVslCta}
@@ -528,7 +527,7 @@ const Index = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackInitiateCheckout}
-                className="group inline-flex w-[88%] max-w-md items-center justify-center gap-2 whitespace-nowrap rounded-full bg-urgent px-5 py-3 text-[15px] font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
+                className="group inline-flex w-[92%] max-w-md items-center justify-center gap-2 whitespace-nowrap rounded-full bg-urgent px-4 py-3 text-[14px] font-bold uppercase tracking-wide text-urgent-foreground shadow-glow transition-all animate-fade-in hover:scale-[1.02] hover:bg-urgent/90 sm:w-auto sm:px-10 sm:py-5 sm:text-lg"
               >
                 <Heart className="h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" />
                 Quero ajudar comprando
